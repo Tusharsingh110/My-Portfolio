@@ -22,8 +22,8 @@ const data= [
         id: 3,
         image: require("../assets/images/portfolio.png"),
         pname:'Portfolio',
-        rlink: 'https://github.com/Tusharsingh110/ReactJS-Portfolio',
-        llink: 'https://tusharsingh110.github.io/ReactJS-Portfolio/'
+        rlink: 'https://github.com/Tusharsingh110/My-Portfolio',
+        llink: 'https://Tusharsingh110.github.io/My-Portfolio'
     },
 
     

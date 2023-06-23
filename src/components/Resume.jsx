@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as Leetcode} from "../assets/images/leetcode.svg"
+import {ReactComponent as Leetcode } from "../assets/images/leetcode.svg"
 import {ReactComponent as Github} from "../assets/images/github.svg"
 import {ReactComponent as Linkedin} from "../assets/images/linkedin.svg"
 
