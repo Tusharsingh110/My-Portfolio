@@ -25,7 +25,6 @@ export default function Cards(props) {
             </span> 
           </div>
         </div>
-      </div>
-    </div>
+      </div></div>
   );
 }
