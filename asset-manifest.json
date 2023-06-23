@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/My-Portfolio/static/css/main.e468b0f8.css",
+    "main.js": "/My-Portfolio/static/js/main.927a2f34.js",
+    "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.ee0ec75cfaa9aaf3ef5bcf2728fd8289.svg",
+    "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
+    "static/media/black-jack.png": "/My-Portfolio/static/media/black-jack.ab715e42c835a80f1b53.png",
+    "static/media/counter.png": "/My-Portfolio/static/media/counter.e1203ba0bb041b271a32.png",
+    "static/media/portfolio.png": "/My-Portfolio/static/media/portfolio.b3c9311c33ea4c13e186.png",
+    "static/media/todo.png": "/My-Portfolio/static/media/todo.3b90706521699479452c.png",
+    "static/media/patatap.png": "/My-Portfolio/static/media/patatap.a86352530ff8eddbc886.png",
+    "static/media/revicons.eot": "/My-Portfolio/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/My-Portfolio/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/My-Portfolio/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/leetcode.svg": "/My-Portfolio/static/media/leetcode.07d3854950cc30e46ad0dd23af22674f.svg",
+    "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
+    "index.html": "/My-Portfolio/index.html",
+    "main.e468b0f8.css.map": "/My-Portfolio/static/css/main.e468b0f8.css.map",
+    "main.927a2f34.js.map": "/My-Portfolio/static/js/main.927a2f34.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e468b0f8.css",
+    "static/js/main.927a2f34.js"
+  ]
+}
