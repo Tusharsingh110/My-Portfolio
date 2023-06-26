@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.59504107.css",
-    "main.js": "/My-Portfolio/static/js/main.d56def31.js",
+    "main.css": "/My-Portfolio/static/css/main.97f51eb0.css",
+    "main.js": "/My-Portfolio/static/js/main.51fda016.js",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.ee0ec75cfaa9aaf3ef5bcf2728fd8289.svg",
     "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
     "static/media/black-jack.png": "/My-Portfolio/static/media/black-jack.ab715e42c835a80f1b53.png",
@@ -19,11 +19,11 @@
     "static/media/Facebook.svg": "/My-Portfolio/static/media/Facebook.d8f9cb1dacd7a9ab36ec9e4dd07209b6.svg",
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
-    "main.59504107.css.map": "/My-Portfolio/static/css/main.59504107.css.map",
-    "main.d56def31.js.map": "/My-Portfolio/static/js/main.d56def31.js.map"
+    "main.97f51eb0.css.map": "/My-Portfolio/static/css/main.97f51eb0.css.map",
+    "main.51fda016.js.map": "/My-Portfolio/static/js/main.51fda016.js.map"
   },
   "entrypoints": [
-    "static/css/main.59504107.css",
-    "static/js/main.d56def31.js"
+    "static/css/main.97f51eb0.css",
+    "static/js/main.51fda016.js"
   ]
 }
