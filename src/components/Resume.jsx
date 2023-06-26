@@ -50,9 +50,9 @@ export default function Resume() {
   <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin pb-2'>SOCIAL & CODING PROFILES</div>
     <div className='text-base md:text-base flex flex-col md:flex-row md:justify-start'>
-      <a href="https://github.com/Tusharsingh110"><button><p className='flex p-1 md:pl-4'> <Github className='w-6 mr-2'/> Github</p></button></a>
-      <a href="https://www.linkedin.com/in/tusharsingh17/"><button><p className='flex p-1 md:pl-4'> <Linkedin className='w-6 h-6 mr-2'/> LinkedIn</p></button></a>
-      <a href="https://leetcode.com/Tusharsingh110/"> <button><p className='flex p-1 md:pl-4'> <Leetcode className='w-6 mr-2'/> Leetcode</p></button></a>
+      <a href="https://github.com/Tusharsingh110" target='_blank' rel='noreferrer'><button><p className='flex p-1 md:pl-4'> <Github className='w-6 mr-2'/> Github</p></button></a>
+      <a href="https://www.linkedin.com/in/tusharsingh17/" target='_blank' rel='noreferrer'><button><p className='flex p-1 md:pl-4'> <Linkedin className='w-6 h-6 mr-2'/> LinkedIn</p></button></a>
+      <a href="https://leetcode.com/Tusharsingh110/" target='_blank' rel='noreferrer'> <button><p className='flex p-1 md:pl-4'> <Leetcode className='w-6 mr-2'/> Leetcode</p></button></a>
     </div>
   </div>
 

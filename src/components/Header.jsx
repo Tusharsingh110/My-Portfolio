@@ -7,10 +7,10 @@ export default function Header() {
 
 
   const menuItems = [
-    { id: 1, title: 'Home' },
-    { id: 2, title: 'About' },
-    { id: 3, title: 'Contact' },
-    { id: 4, title: 'Projects' },
+    // { id: 1, title: 'Home' },
+    // { id: 2, title: 'About' },
+    // { id: 3, title: 'Contact' },
+    // { id: 4, title: 'Projects' },
   ];
 
   const handleToggle = () => {
@@ -35,7 +35,7 @@ export default function Header() {
             </li>
           ))}
           <div className='border-2 rounded-3xl font-bold p-2 border-white hover:bg-[#4285F4] ease-in-out'>
-            <a href='https://www.linkedin.com/in/tusharsingh17/'>
+            <a href='https://www.linkedin.com/in/tusharsingh17/ ' target='_blank' rel='noreferrer'>
               <button>Let's Connect</button>
             </a>
           </div>

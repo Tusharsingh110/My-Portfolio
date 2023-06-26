@@ -4,7 +4,7 @@ import Typed from 'react-typed';
 
 export default function Banner() {
   return (
-    <div className='bg-[#ffffff] py-[80px] w-full'>
+    <div className='py-[80px] w-full'>
       <div className="md:flex max-w-[1200px] mx-auto md:text-[25px] lg:text-[35px] md:p-[24px]">
         <div className="info-container mx-auto my-auto px-8 md:w-[35%] text-center md:text-left">
           <div className='mt-6'>Hii</div>
@@ -18,6 +18,7 @@ export default function Banner() {
               loop={true}
             />
           </div>
+          
         </div>
         <div className='text-center md:w-[50%]'>
           <img src={imge} alt="" className='inline' />

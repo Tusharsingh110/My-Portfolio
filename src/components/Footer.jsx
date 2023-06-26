@@ -31,14 +31,14 @@ export default function Footer() {
 
                     <ul className='flex justify-evenly'>
 
-                    <li><a href="https://www.facebook.com/prince221001/">  <Facebook  className='w-14 hover:-translate-y-1 duration-[400ms]'/> </a></li>
-                    <li><a href="https://www.instagram.com/_ig_tushar_/"> <Instagram className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
-                    <li> <a href="https://twitter.com/tusharsingh6t?t=ryjoCREL6c3w-zAcgMSGow&s=09"><Twitter   className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
-                    <li> <a href="https://www.linkedin.com/in/tusharsingh17/"><Linkedsvg className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
+                    <li><a href="https://www.facebook.com/prince221001/" target='_blank' rel='noreferrer'>  <Facebook  className='w-14 hover:-translate-y-1 duration-[400ms]'/> </a></li>
+                    <li><a href="https://www.instagram.com/_ig_tushar_/" target='_blank' rel='noreferrer'> <Instagram className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
+                    <li> <a href="https://twitter.com/tusharsingh6t?t=ryjoCREL6c3w-zAcgMSGow&s=09" target='_blank' rel='noreferrer'><Twitter   className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
+                    <li> <a href="https://www.linkedin.com/in/tusharsingh17/" target='_blank' rel='noreferrer'><Linkedsvg className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
 
                     </ul>
                     
-                    <p className='text-center text-xs pt-2'> Icons by <a className='font-bold italic' href="https://icons8.com">Icons8</a></p>
+                    <p className='text-center text-xs pt-2'> Icons by <a className='font-bold italic' href="https://icons8.com" target='_blank' rel='noreferrer'>Icons8</a></p>
                     
                     </div>
                 <div className='h-[fit-content] p-4 m-2 col-span-1 '> 
@@ -60,6 +60,8 @@ export default function Footer() {
 
                 </div>
                 <p className='text-white w-[fit-content] pt-2 pb-2 mx-auto '>Copyright © 2023 TS. All rights reserved</p>
+                
+              
             </div>
         </>
     )
