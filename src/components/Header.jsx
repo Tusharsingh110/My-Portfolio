@@ -11,10 +11,9 @@ export default function Header() {
   const toggleTheme = () => {
     setTheme(prevTheme => {
       return !prevTheme
-
     })
-    
   }
+  
   React.useEffect(() => {
     if(!theme) {
       document.documentElement.classList.remove("dark")
@@ -43,11 +42,13 @@ export default function Header() {
         <div className='text-4xl font-bold ml-5'>
           TS<span className='text-[#d62d20]'>.</span>
         </div>
+        <div className="md:hidden flex items-center"><button className='mx-4' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button>
         {toggle ? (
           <AiOutlineClose onClick={handleToggle} className='text-3xl md:hidden block' />
         ) : (
           <AiOutlineMenu onClick={handleToggle} className='text-3xl md:hidden block' />
         )}
+        </div>
         <ul className='hidden md:flex gap-10 items-center'>
           {menuItems.map((item) => (
             <li className='li' key={item.id}>
