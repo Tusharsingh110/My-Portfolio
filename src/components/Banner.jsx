@@ -4,8 +4,10 @@ import Typed from 'react-typed';
 
 export default function Banner() {
   return (
-    <div className='py-[80px] w-full'>
-      <div className="md:flex max-w-[1200px] mx-auto md:text-[25px] lg:text-[35px] md:p-[24px]">
+    <div className='py-40 w-full dark:bg-[#33373f] dark:text-white'>
+      
+      <div className="md:flex max-w-[1200px] mx-auto md:text-[25px] lg:text-[35px] md:p-[24px] ">
+        
         <div className="info-container mx-auto my-auto px-8 md:w-[35%] text-center md:text-left">
           <div className='mt-6'>Hii</div>
           <div className='mt-6'>I am <span className='mt-6'>Tushar Singh</span></div>

@@ -17,7 +17,7 @@ const skillsdata = [
     {
      id : 4,
      label: "Tailwind CSS",
-     imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+     imgsrc: "https://img.icons8.com/fluency/144/000000/tailwind_css.png"
     },
     {
      id : 5,

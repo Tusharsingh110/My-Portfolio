@@ -12,10 +12,11 @@ import {ReactComponent as Linkedin} from "../assets/images/linkedin.svg"
 
 export default function Resume() {
   return (
-    <div className='max-w-[1300px] mx-auto py-8 my-8 px-10'>
+    <div className="dark:bg-[#1d1f23] dark:text-white py-8">
+    <div className='max-w-[1300px] mx-auto  px-10 my-8  '>
 
-<div className='text-center bg-[#2271ef] text-white  py-8 text-[20px] md:text-4xl font-bold'>Resume</div>
-<div className='shadow-2xl p-2'>
+<div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold'>Resume</div>
+<div className='shadow-2xl p-2 dark:bg-[#292c32]'>
 
     <div className='text-center md:text-2xl p-4'>
     <p className='py-1'>Tushar Singh</p>
@@ -24,7 +25,7 @@ export default function Resume() {
     <p className='py-1'> +91 6388 409 329</p>
     </div>
     </div>
-    <div className='md:flex h-full md:w-full border-2 border-t-[#d3d3d3] border-b-0 border-l-0 border-r-0'>
+    <div className='md:flex h-full md:w-full border-2 border-t-[#d3d3d3] dark:border-t-[#414650] border-b-0 border-l-0 border-r-0'>
 
 
 
@@ -35,10 +36,10 @@ export default function Resume() {
 
 
 {/*left side*/ }
-<div className='md:w-[50%] mx-auto px-4 md:py-2 md:border md:border-t-0 md:border-b-0 md:border-l-0 md:border-r-[#d3d3d3] my-4'>
+<div className='md:w-[50%] mx-auto px-4 md:py-2 md:border md:border-t-0 md:border-b-0 md:border-l-0 md:border-r-[#d3d3d3] dark:md:border-r-[#464b55] my-4'>
 
 
-  <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>EDUCATION</div>
     <div className='text-[16px] md:text-sm'>
       <p className='py-2 font-semibold'>| INDIAN INSTITUTE OF INFORMATION TECHNOLOGY, BHAGALPUR</p>
@@ -47,7 +48,7 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin pb-2'>SOCIAL & CODING PROFILES</div>
     <div className='text-base md:text-base flex flex-col md:flex-row md:justify-start'>
       <a href="https://github.com/Tusharsingh110" target='_blank' rel='noreferrer'><button><p className='flex p-1 md:pl-4'> <Github className='w-6 mr-2'/> Github</p></button></a>
@@ -56,11 +57,11 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>COURSEWORK</div>
     <div className='text-[16px] md:text-[14px]'>
       <p className='py-2 font-semibold'>| UNDERGRADUATE</p>
-      <ul className='marker:text-[#2271ef] list-disc pl-5 space-y-3'>
+      <ul className='marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3'>
         <div className='md:flex md:justify-around'>
           <div className='space-y-1 px-2'>
             <li><p>Data Structure and Algorithms</p></li>
@@ -78,27 +79,27 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>SKILLS</div>
     <p className='py-2 font-semibold'>| PROGRAMMING AND TOOLS</p>
     <div className='md:flex md:justify-around text-[16px] md:text-[14px]'>
       <div>
         <p className='py-2 font-semibold'>Languages</p>
-        <ul className='marker:text-[#2271ef] list-disc pl-5 space-y-1'>
+        <ul className='marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-1'>
           <li><p>C/C++</p></li>
           <li><p>Python</p></li>
         </ul>
       </div>
       <div>
         <p className='py-2 font-semibold'>Web Development</p>
-        <ul className='marker:text-[#2271ef] list-disc pl-5 space-y-1'>
+        <ul className='marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-1'>
           <li><p>HTML + ReactJS</p></li>
           <li><p>Tailwind CSS</p></li>
         </ul>
       </div>
       <div>
         <p className='py-2 font-semibold'>Libraries and Frameworks</p>
-        <ul className='marker:text-[#2271ef] list-disc pl-5 space-y-1'>
+        <ul className='marker:text-[#2271ef]  dark:marker:text-white list-disc pl-5 space-y-1'>
           <li><p>React JS</p></li>
           <li><p>Tailwind CSS</p></li>
           <li><p>Node JS</p></li>
@@ -126,12 +127,12 @@ export default function Resume() {
 <div className=' md:w-[50%] mx-auto px-4 md:py-2  border-r-[#d3d3d3] my-4'>
 
 
-    <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|CHEGG INC |SUBJECT MATTER EXPERT</p>
-        <p className='pb-2 font-semibold text-slate-500'>|MAR 2022 - Present | Freelance</p>
-        <ul className="marker:text-[#2271ef] list-disc pl-5 space-y-3">
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|MAR 2022 - Present | Freelance</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
             <li><p>Solved doubts of more than 300 students.</p></li>
@@ -143,12 +144,12 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>PROJECTS</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PORTFOLIO |WEB DEVELOPMENT</p>
-        <p className='pb-2 font-semibold text-slate-500'>HTML | CSS | JAVASCRIPT | REACT JS | TAILWIND CSS</p>
-        <ul className="marker:text-[#2271ef] list-disc pl-5 space-y-3">
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>HTML | CSS | JAVASCRIPT | REACT JS | TAILWIND CSS</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
             <li><p>To showcase several mini projects completed during the course.</p></li>
@@ -160,11 +161,11 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>ACHIEVEMENTS</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PERSONAL & PROFESSIONAL ACHIEVEMENTS</p>
-        <ul className="marker:text-[#2271ef] list-disc pl-5 space-y-3">
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-3 px-2'>
             <li>
@@ -193,12 +194,12 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>ROLES AND RESPONSIBILITIES</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PyC INCHARGE |CODING CLUB, IIIT BHAGALPUR</p>
-        <p className='pb-2 font-semibold text-slate-500'>|JAN 2023 - PRESENT</p>
-        <ul className="marker:text-[#2271ef] list-disc pl-5 space-y-3">
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|JAN 2023 - PRESENT</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
             <li>
@@ -210,8 +211,8 @@ export default function Resume() {
         </div>
         </ul>
         <p className='py-2 font-semibold'>|EVENT MANAGER |ENYUGMA TECHNO-CULTURAL FEST, IIIT BHAGALPUR</p>
-        <p className='pb-2 font-semibold text-slate-500'>|AUG 2021 - DEC 2021</p>
-        <ul className="marker:text-[#2271ef] list-disc pl-5 space-y-3">
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|AUG 2021 - DEC 2021</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
             <li>
@@ -230,6 +231,7 @@ export default function Resume() {
 
 
 
+    </div>
     </div>
     </div>
     </div>

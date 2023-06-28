@@ -8,11 +8,11 @@ import {ReactComponent as Twitter } from "../assets/images/Twitter.svg"
 export default function Footer() {
     return (
         <>  
-            <div className='bg-[#2271ef] w-full h-[fit-content] md:text-l text-white  mx-auto pt-8 px-2'>
-                <div className='max-w-[1240px] mx-auto md:grid grid-cols-2 border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] md:grid-cols-4 '>
+            <div className='bg-[#2271ef] dark:bg-[#33373f] w-full h-[fit-content] md:text-l text-white  mx-auto pt-8 px-2'>
+                <div className='max-w-[1240px] mx-auto md:grid grid-cols-2 border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] md:grid-cols-4 '>
 
                 <div className='h-[fit-content] p-4 m-2 '> 
-                <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff]'>Quick links</p>
+                <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] '>Quick links</p>
                     <ul className='flex md:flex-col justify-evenly gap-2 pt-4'>
 
                         <li>Home</li>
@@ -27,7 +27,7 @@ export default function Footer() {
                   </div>
                 <div className='h-[200px] p-4 m-2 col-span-2 space-y-4'>
                     
-                    <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff]'>Social Handles</p>
+                    <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] '>Social Handles</p>
 
                     <ul className='flex justify-evenly'>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                     </div>
                 <div className='h-[fit-content] p-4 m-2 col-span-1 '> 
 
-                <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff]'>Contact</p>
+                <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] '>Contact</p>
                 
                 <ul className='text-center space-y-2 pt-4'>
 

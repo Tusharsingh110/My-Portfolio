@@ -3,14 +3,34 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
+  let localTheme = localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : false
+  const [theme, setTheme] = useState(localTheme);
 
+  let themeImg = theme ? 'moon.png' : 'sun.png'
+  
+  const toggleTheme = () => {
+    setTheme(prevTheme => {
+      return !prevTheme
 
+    })
+    
+  }
+  React.useEffect(() => {
+    if(!theme) {
+      document.documentElement.classList.remove("dark")
+    }
+    else {
+      document.documentElement.classList.add("dark")
+    }
+    const updatedTheme = JSON.stringify(theme)
+    localStorage.setItem("theme",updatedTheme)
+  },[theme])
 
   const menuItems = [
-    // { id: 1, title: 'Home' },
-    // { id: 2, title: 'About' },
-    // { id: 3, title: 'Contact' },
-    // { id: 4, title: 'Projects' },
+    { id: 1, title: 'Home' },
+    { id: 2, title: 'About' },
+    { id: 3, title: 'Contact' },
+    { id: 4, title: 'Projects' },
   ];
 
   const handleToggle = () => {
@@ -18,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <div className='bg-[#2271ef] text-white p-4'>
+    <div className='bg-[#2271ef] dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed'>
       <div className='max-w-[1200px] py-1 flex justify-between items-center mx-auto'>
         <div className='text-4xl font-bold ml-5'>
           TS<span className='text-[#d62d20]'>.</span>
@@ -39,6 +59,9 @@ export default function Header() {
               <button>Let's Connect</button>
             </a>
           </div>
+
+          <div className=""><button className='' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button></div>
+          
         </ul>
         <ul
           className={`duration-300 md:hidden w-full h-screen fixed bg-black top-[80px] ${
@@ -51,6 +74,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        
       </div>
     </div>
   );
