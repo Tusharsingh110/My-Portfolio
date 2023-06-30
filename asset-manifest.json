@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.e6e83f4f.css",
-    "main.js": "/My-Portfolio/static/js/main.c0aa109f.js",
+    "main.css": "/My-Portfolio/static/css/main.f419bcdd.css",
+    "main.js": "/My-Portfolio/static/js/main.edd2515e.js",
+    "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.ee0ec75cfaa9aaf3ef5bcf2728fd8289.svg",
+    "static/media/me1.jpeg": "/My-Portfolio/static/media/me1.e0eb260edb8f09087549.jpeg",
     "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
     "static/media/black-jack.png": "/My-Portfolio/static/media/black-jack.ab715e42c835a80f1b53.png",
     "static/media/counter.png": "/My-Portfolio/static/media/counter.e1203ba0bb041b271a32.png",
@@ -20,11 +22,11 @@
     "static/media/Facebook.svg": "/My-Portfolio/static/media/Facebook.d8f9cb1dacd7a9ab36ec9e4dd07209b6.svg",
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
-    "main.e6e83f4f.css.map": "/My-Portfolio/static/css/main.e6e83f4f.css.map",
-    "main.c0aa109f.js.map": "/My-Portfolio/static/js/main.c0aa109f.js.map"
+    "main.f419bcdd.css.map": "/My-Portfolio/static/css/main.f419bcdd.css.map",
+    "main.edd2515e.js.map": "/My-Portfolio/static/js/main.edd2515e.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6e83f4f.css",
-    "static/js/main.c0aa109f.js"
+    "static/css/main.f419bcdd.css",
+    "static/js/main.edd2515e.js"
   ]
 }
