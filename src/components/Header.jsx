@@ -37,7 +37,7 @@ export default function Header() {
   };
 
   return (
-    <div className='bg-[#2271ef] dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed'>
+    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed'>
       <div className='max-w-[1200px] py-1 flex justify-between items-center mx-auto'>
         <div className='text-4xl font-bold ml-5'>
           TS<span className='text-[#d62d20]'>.</span>
@@ -61,7 +61,7 @@ export default function Header() {
             </a>
           </div>
 
-          <div className=""><button className='' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button></div>
+          <div className=""><button className='w-10 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button></div>
           
         </ul>
         <ul
