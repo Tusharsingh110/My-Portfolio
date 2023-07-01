@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.f419bcdd.css",
-    "main.js": "/My-Portfolio/static/js/main.edd2515e.js",
+    "main.js": "/My-Portfolio/static/js/main.6693f68d.js",
     "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.ee0ec75cfaa9aaf3ef5bcf2728fd8289.svg",
     "static/media/me1.jpeg": "/My-Portfolio/static/media/me1.e0eb260edb8f09087549.jpeg",
     "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
     "static/media/black-jack.png": "/My-Portfolio/static/media/black-jack.ab715e42c835a80f1b53.png",
     "static/media/counter.png": "/My-Portfolio/static/media/counter.e1203ba0bb041b271a32.png",
-    "static/media/portfolio.png": "/My-Portfolio/static/media/portfolio.b3c9311c33ea4c13e186.png",
     "static/media/todo.png": "/My-Portfolio/static/media/todo.3b90706521699479452c.png",
     "static/media/patatap.png": "/My-Portfolio/static/media/patatap.a86352530ff8eddbc886.png",
     "static/media/revicons.eot": "/My-Portfolio/static/media/revicons.a77de540a38981833f9e.eot",
@@ -23,10 +22,10 @@
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
     "main.f419bcdd.css.map": "/My-Portfolio/static/css/main.f419bcdd.css.map",
-    "main.edd2515e.js.map": "/My-Portfolio/static/js/main.edd2515e.js.map"
+    "main.6693f68d.js.map": "/My-Portfolio/static/js/main.6693f68d.js.map"
   },
   "entrypoints": [
     "static/css/main.f419bcdd.css",
-    "static/js/main.edd2515e.js"
+    "static/js/main.6693f68d.js"
   ]
 }
