@@ -9,9 +9,7 @@ export default function Header() {
   let themeImg = theme ? 'moon.png' : 'sun.png'
   
   const toggleTheme = () => {
-    setTheme(prevTheme => {
-      return !prevTheme
-    })
+    setTheme(prevTheme => !prevTheme)
   }
   
   React.useEffect(() => {
@@ -37,7 +35,7 @@ export default function Header() {
   };
 
   return (
-    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed'>
+    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed duration-[500ms]'>
       <div className='max-w-[1200px] py-1 flex justify-between items-center mx-auto'>
         <div className='text-4xl font-bold ml-5'>
           TS<span className='text-[#d62d20]'>.</span>

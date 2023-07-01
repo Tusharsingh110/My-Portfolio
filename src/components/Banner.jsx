@@ -4,7 +4,7 @@ import Typed from 'react-typed';
 
 export default function Banner() {
   return (
-    <div className='w-full dark:bg-[#33373f] dark:text-white pt-36 pb-12'>
+    <div className='w-full dark:bg-[#33373f] dark:text-white pt-36 pb-12 duration-[500ms]' >
       
       <div className="flex flex-col sm:flex-row text-[22px] md:text-[30px] lg:text-[35px] items-center justify-center">
         

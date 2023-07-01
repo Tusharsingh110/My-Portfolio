@@ -10,7 +10,7 @@ export default function Skills() {
   ) )
 
   return (
-    <div className='bg-[#2271ef] dark:bg-[#1d1f23] w-full py-10'>
+    <div className='bg-[#2271ef] dark:bg-[#1d1f23] w-full py-10 duration-[500ms]'>
       <div className='max-w-[1200px] mx-auto'>
         <div className='text-center text-[#fff] py-10 text-[20px] font-bold md:text-4xl'>I have worked with these technologies </div>
         <div className='md:text-xl sm:text-[25px] text-white text-center grid lg:gap-5 md:gap-3 lg:grid-cols-5 sm:grid-cols-3'>

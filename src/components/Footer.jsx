@@ -8,7 +8,7 @@ import {ReactComponent as Twitter } from "../assets/images/Twitter.svg"
 export default function Footer() {
     return (
         <>  
-            <div className='bg-[#2271ef] dark:bg-[#33373f] w-full h-[fit-content] md:text-l text-white  mx-auto pt-8 px-2'>
+            <div className='bg-[#2271ef] dark:bg-[#33373f] w-full h-[fit-content] md:text-l text-white  mx-auto pt-8 px-2 duration-[500ms]'>
                 <div className='max-w-[1240px] mx-auto md:grid grid-cols-2 border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] md:grid-cols-4 '>
 
                 <div className='h-[fit-content] p-4 m-2 '> 
