@@ -12,10 +12,10 @@ import {ReactComponent as Linkedin} from "../assets/images/linkedin.svg"
 
 export default function Resume() {
   return (
-    <div className="dark:bg-[#1d1f23] dark:text-white py-8 duration-[500ms]">
+    <div className="dark:bg-[#1d1f23] dark:text-white py-8 duration-[150ms]">
     <div className='max-w-[1300px] mx-auto  px-10 my-8  '>
 
-<div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold duration-[500ms]'>Resume</div>
+<div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold duration-[150ms]'>Resume</div>
 <div className='shadow-2xl p-2 dark:bg-[#292c32]'>
 
     <div className='text-center md:text-2xl p-4'>
@@ -39,7 +39,7 @@ export default function Resume() {
 <div className='md:w-[50%] mx-auto px-4 md:py-2 md:border md:border-t-0 md:border-b-0 md:border-l-0 md:border-r-[#d3d3d3] dark:md:border-r-[#464b55] my-4'>
 
 
-  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>EDUCATION</div>
     <div className='text-[16px] md:text-sm'>
       <p className='py-2 font-semibold'>| INDIAN INSTITUTE OF INFORMATION TECHNOLOGY, BHAGALPUR</p>
@@ -48,7 +48,7 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin pb-2'>SOCIAL & CODING PROFILES</div>
     <div className='text-base md:text-base flex flex-col md:flex-row md:justify-start'>
       <a href="https://github.com/Tusharsingh110" target='_blank' rel='noreferrer'><button><p className='flex p-1 md:pl-4'> <Github className='w-6 mr-2'/> Github</p></button></a>
@@ -57,7 +57,7 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>COURSEWORK</div>
     <div className='text-[16px] md:text-[14px]'>
       <p className='py-2 font-semibold'>| UNDERGRADUATE</p>
@@ -79,7 +79,7 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text-xl md:font-thin'>SKILLS</div>
     <p className='py-2 font-semibold'>| PROGRAMMING AND TOOLS</p>
     <div className='md:flex md:justify-around text-[16px] md:text-[14px]'>
@@ -127,7 +127,7 @@ export default function Resume() {
 <div className=' md:w-[50%] mx-auto px-4 md:py-2  border-r-[#d3d3d3] my-4'>
 
 
-    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|CHEGG INC |SUBJECT MATTER EXPERT</p>
@@ -144,7 +144,7 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>PROJECTS</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PORTFOLIO |WEB DEVELOPMENT</p>
@@ -161,7 +161,7 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>ACHIEVEMENTS</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PERSONAL & PROFESSIONAL ACHIEVEMENTS</p>
@@ -194,7 +194,7 @@ export default function Resume() {
     </div>
     </div>
 
-    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] p-4 my-2 rounded-2xl shadow transition duration-500 hover:shadow-xl'>
+    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>ROLES AND RESPONSIBILITIES</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PyC INCHARGE |CODING CLUB, IIIT BHAGALPUR</p>
