@@ -27,6 +27,6 @@ export default function Skills() {
 
 function SkillCard({source, label}) {
   return (
-    <div className=' h-[150px] bg-[#EDF3FD] dark:bg-[#33373f] p-4 rounded-2xl shadow-xl w-[150px] mx-auto my-2 hover:scale-105 transition duration-300 '><img src={source} label={label} alt="" /></div>
+    <div className=' h-[150px] bg-[#EDF3FD] dark:bg-[#33373f] p-4 rounded-2xl shadow-xl drop-shadow-lg w-[150px] mx-auto my-2 hover:scale-105 transition duration-300'><img src={source}  alt={label} /></div>
   )
 }

@@ -15,7 +15,7 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1
+    items: 2
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -37,7 +37,7 @@ const projdata = data.map(curproj => {
 
 export default function Projects() {
   return (
-    <div className="dark:bg-[#33373f] py-10 duration-[500ms] ">
+    <div className=" py-10 dark:bg-[#33373f] duration-[500ms] ">
     <div className='max-w-[1300px] mx-auto my-10'>
       <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div>
       <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">

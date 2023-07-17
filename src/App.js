@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
 import Pathfinder from "./components/Pathfinder";
+import Feedback from './components/Feedback';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
    <Skills />
    <Projects />
    <Resume />
+   <Feedback/>
    <Footer />
+   
    {/* <Pathfinder/> */}
    </>
   );

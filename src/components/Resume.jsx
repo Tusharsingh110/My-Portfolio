@@ -12,11 +12,11 @@ import {ReactComponent as Linkedin} from "../assets/images/linkedin.svg"
 
 export default function Resume() {
   return (
-    <div className="dark:bg-[#1d1f23] dark:text-white py-8 duration-[150ms]">
+    <div className="py-8 dark:bg-[#1d1f23] dark:text-white duration-[150ms]">
     <div className='max-w-[1300px] mx-auto  px-10 my-8  '>
 
 <div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold duration-[150ms]'>Resume</div>
-<div className='shadow-2xl p-2 dark:bg-[#292c32]'>
+<div className='shadow-xl p-2 dark:bg-[#292c32]'>
 
     <div className='text-center md:text-2xl p-4'>
     <p className='py-1'>Tushar Singh</p>
