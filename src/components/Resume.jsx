@@ -108,6 +108,25 @@ export default function Resume() {
     </div>
   </div>
 
+  <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
+    <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
+    <div className='text-[16px] md:text-[14px]'>
+        <p className='py-2 font-semibold'>|CHEGG INC |SUBJECT MATTER EXPERT</p>
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|MAR 2022 - Present | Freelance</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
+        <div className=''>
+            <div className='space-y-1 px-2'>
+            <li><p> <span className='font-semibold'>Proficient in Subject Matter:</span> Demonstrated in-depth knowledge and expertise in the specific subject area, providing
+accurate guidance and support to students</p></li>
+            <li><p> <span className='font-semibold'>Excellent Communication Skills:</span> Effectively conveyed information clearly and concisely, facilitating comprehension and
+learning for students</p></li>
+            <li><p> <span className='font-semibold'>Commitment to Student Success:</span> Dedicated to helping students achieve their academic goals, providing high-quality
+assistance and guidance throughout their learning journey.</p></li>
+            </div>
+        </div>
+        </ul>
+    </div>
+    </div>
 
 </div>
 
@@ -127,26 +146,23 @@ export default function Resume() {
 <div className=' md:w-[50%] mx-auto px-4 md:py-2  border-r-[#d3d3d3] my-4'>
 
 
-    <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
-    <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
-    <div className='text-[16px] md:text-[14px]'>
-        <p className='py-2 font-semibold'>|CHEGG INC |SUBJECT MATTER EXPERT</p>
-        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|MAR 2022 - Present | Freelance</p>
-        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
-        <div className=''>
-            <div className='space-y-1 px-2'>
-            <li><p>Solved doubts of more than 300 students.</p></li>
-            <li><p>Critical thinking</p></li>
-            <li><p>Problem Solving</p></li>
-            </div>
-        </div>
-        </ul>
-    </div>
-    </div>
+    
 
     <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>PROJECTS</div>
     <div className='text-[16px] md:text-[14px]'>
+        <p className='py-2 font-semibold'>|PROMPT-EX-AI |MERN-WEB DEVELOPMENT</p>
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>HTML | CSS | JS | REACT JS | TAILWIND CSS | NEXT JS | GOOGLE CLOUD CONSOLE | MONGO DB</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
+        <div className=''>
+            <div className='space-y-1 px-2'>
+            <li><p> <span className='font-semibold'>CRUD Functionality:</span> Developed a MERN stack website with complete <span className='font-semibold'>Create, Read, Update, and Delete (CRUD)</span> operations, allowing users to effortlessly manage AI chat prompts.</p></li>
+            <li><p> <span className='font-semibold'>Google Auth Integration:</span> Integrated Google Auth via Google Cloud Console for secure and convenient user authentication, enabling users to sign in using their Google accounts.</p></li>
+            <li><p> <span className='font-semibold'>Collaborative Prompt Creation:</span> Platform where users can collaboratively create and share AI chat prompts, fostering productivity and efficiency by leveraging collective knowledge.</p></li>
+            </div>
+        </div>
+        </ul>
+
         <p className='py-2 font-semibold'>|PORTFOLIO |WEB DEVELOPMENT</p>
         <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>HTML | CSS | JAVASCRIPT | REACT JS | TAILWIND CSS</p>
         <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">

@@ -37,10 +37,10 @@ const data= [
 
     {
         id: 5,
-        image: require("../assets/images/counter.png"),
-        pname:'JS Counter App',
-        rlink: 'https://github.com/Tusharsingh110/Counter-Javascript',
-        llink: 'https://tusharsingh110.github.io/Counter-Javascript/'
+        image: require("../assets/images/promptexai.png"),
+        pname:'Prompt-EX-AI',
+        rlink: 'https://github.com/Tusharsingh110/PromptEx-AI',
+        llink: 'https://prompt-ex-ai.vercel.app/'
     }    
 
 ]

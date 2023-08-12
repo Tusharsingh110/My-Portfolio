@@ -6,9 +6,8 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
-import Pathfinder from "./components/Pathfinder";
+// import Pathfinder from "./components/Pathfinder";
 import Feedback from './components/Feedback';
-
 function App() {
   return (
    <>

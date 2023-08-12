@@ -15,10 +15,11 @@ export default function Footer() {
                 <p className='text-center pb-4 font-bold border border-t-0 border-l-0 border-r-0  border-b-[#9ebaff] dark:border-b-[#5f6674] '>Quick links</p>
                     <ul className='flex md:flex-col justify-evenly gap-2 pt-4'>
 
-                        <li>Home</li>
-                        <li>Skills</li>
+                        {/* <li>Home</li> */}
+                        <li>To be updated soon...</li>
+                        {/* <li>Skills</li>
                         <li>Projects</li>
-                        <li>Resume</li>
+                        <li>Resume</li> */}
 
                     </ul>
 

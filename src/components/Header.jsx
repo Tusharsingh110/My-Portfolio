@@ -24,10 +24,10 @@ export default function Header() {
   },[theme])
 
   const menuItems = [
-    { id: 1, title: 'Home' },
-    { id: 2, title: 'About' },
-    { id: 3, title: 'Contact' },
-    { id: 4, title: 'Projects' },
+    // { id: 1, title: 'Home' },
+    // { id: 2, title: 'About' },
+    // { id: 3, title: 'Contact' },
+    // { id: 4, title: 'Projects' },
   ];
 
   const handleToggle = () => {
@@ -35,11 +35,13 @@ export default function Header() {
   };
 
   return (
-    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-4 z-50 w-full fixed duration-[500ms] h-17'>
+    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17'>
       <div className='max-w-[1200px] py-1 flex justify-between items-center mx-auto'>
+        <a href="https://Tusharsingh110.github.io/My-Portfolio">
         <div className='text-4xl font-bold ml-5'>
           TS<span className='text-[#d62d20]'>.</span>
         </div>
+        </a>
         <div className="md:hidden flex items-center"><button className='mx-4' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} width={30} height={30} alt="theme" /> </button>
         {toggle ? (
           <AiOutlineClose onClick={handleToggle} className='text-3xl md:hidden block' />
