@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://i.postimg.cc/SxXJxSHr/android-chrome-512x512.png" alt="My-Portfolio Logo" width="100" height="80"/>
+    <a href="https://Tusharsingh110.github.io/My-Portfolio"><img src="https://i.postimg.cc/SxXJxSHr/android-chrome-512x512.png" alt="My-Portfolio Logo" width="100" height="80"/></a>
 
 # My Portfolio 🚀
 
@@ -7,10 +7,10 @@ Welcome to my digital realm of coding adventures! This GitHub repository showcas
 
 ## What's Inside
 
-- ReactJS Magic: I've used ReactJS to create interactive UI components that respond to your commands.
-- Tailwind CSS Charm: With Tailwind CSS, I've crafted responsive designs and layouts with ease.
-- Mini-Projects Galore: Explore a collection of mini-projects, from coding puzzles to data experiments.
-- Résumé Highlight: Check out my résumé crafted with LaTeX, capturing my skills and experiences.
+- **ReactJS Magic**: I've used ReactJS to create interactive UI components that respond to your commands.
+- **Tailwind CSS Charm**: With Tailwind CSS, I've crafted responsive designs and layouts with ease.
+- **Mini-Projects Galore**: Explore a collection of mini-projects, from coding puzzles to data experiments.
+- **Résumé Highlight**: Check out my résumé crafted with LaTeX, capturing my skills and experiences.
 
 ## Explore Artifacts
 
