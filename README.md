@@ -1,6 +1,8 @@
 <div align="center">
     <a href="https://Tusharsingh110.github.io/My-Portfolio"><img src="https://i.postimg.cc/SxXJxSHr/android-chrome-512x512.png" alt="My-Portfolio Logo" width="100" height="80"/></a>
 
+Click on the above icon to goto the website.
+
 # My Portfolio 🚀
 
 Welcome to my digital realm of coding adventures! This GitHub repository showcases my tech escapades, powered by ReactJS and styled with Tailwind CSS. Join me on a journey through mini-projects, each a testament to my curiosity and coding skills.
