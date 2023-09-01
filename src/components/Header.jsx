@@ -55,7 +55,7 @@ export default function Header() {
               {item.title}
             </li>
           ))}
-          <div className='border-2 rounded-3xl font-bold p-2 border-white hover:bg-[#4285F4] ease-in-out'>
+          <div className='rounded-3xl duration-[100ms] font-bold p-2  ease-in-out hover:bg-white hover:text-[#2271ef] border-[1px] border-white hover:border-[#2271ef]'>
             <a href='https://www.linkedin.com/in/tusharsingh17/ ' target='_blank' rel='noreferrer'>
               <button>Let's Connect</button>
             </a>

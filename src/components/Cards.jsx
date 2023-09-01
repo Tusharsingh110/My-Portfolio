@@ -12,14 +12,14 @@ export default function Cards(props) {
             <span>
               {/* <hr className='pt-4 ' /> */}
               <a href={props.llink} target='_blank' rel='noreferrer'>
-                <button className='w-[80px] h-[35px] mx-2  hover:bg-[#639dfa] bg-[#4285F4] text-[white] md:text-md rounded-2xl'>
+                <button className='w-[80px] h-[35px] mx-2   bg-[#4285F4] text-[white] md:text-md rounded-2xl hover:bg-white hover:text-[#2271ef] border-[1px] border-white hover:border-[#2271ef] duration-[100ms]'>
                   Live
                 </button>
               </a>
             </span>
             <span>
               <a href={props.rlink} target='_blank' rel='noreferrer'>
-                <button className='w-[80px] h-[35px] mx-2 hover:bg-[#639dfa] bg-[#4285F4] text-[white] md:text-md rounded-2xl'>
+                <button className='w-[80px] h-[35px] mx-2   bg-[#4285F4] text-[white] md:text-md rounded-2xl hover:bg-white hover:text-[#2271ef] border-[1px] border-white hover:border-[#2271ef] duration-[100ms]'> 
                   Code
                 </button>
               </a>

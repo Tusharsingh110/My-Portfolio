@@ -15,7 +15,8 @@ export default function Resume() {
     <div className="py-8 dark:bg-[#1d1f23] dark:text-white duration-[150ms]">
     <div className='max-w-[1300px] mx-auto  px-10 my-8  '>
 
-<div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold duration-[150ms]'>Resume</div>
+<div className='text-center bg-[#2271ef] dark:bg-[#183777] text-white  py-8 text-[20px] md:text-4xl font-bold duration-[150ms]'>Resume
+</div>
 <div className='shadow-xl p-2 dark:bg-[#292c32]'>
 
     <div className='text-center md:text-2xl p-4'>
@@ -249,8 +250,13 @@ assistance and guidance throughout their learning journey.</p></li>
 
     </div>
     </div>
+    <div className='m-6 w-[fit-content] mx-auto '>
+    <a href="https://drive.google.com/u/0/uc?id=1XFKLc_1GT-HNRLvT5oWvhYfnidEEnaCD&export=download" className='p-3 w-30 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] text-white  hover:bg-white hover:text-[#2271ef] border hover:border border-[#2271ef] duration-[100ms]' download='Tushar_resume' >Download Resume</a>
     </div>
     </div>
+    
+    </div>
+    
     </div>
   )
 }

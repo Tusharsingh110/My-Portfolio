@@ -69,8 +69,8 @@ const Feedback = () => {
                             <textarea onChange={handleChange} className='w-full m-4 p-1 outline-none -outline-offset-0 focus:outline-[#2271ef] rounded-sm dark:bg-[#464b55]' name="message" id="" cols="30" rows="10" placeholder='Your message goes here..' value={feedback.message} required></textarea>
                         </div>
                     </div>
-                    <div className="flex mt-2 justify-center">
-                        <input className='p-2 w-24 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] text-white' type='submit' value='Submit' />
+                    <div className="flex mt-2  justify-center">
+                        <input className='p-2 w-24 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] border text-white hover:bg-white hover:text-[#2271ef] hover:border border-[#2271ef] duration-[100ms]' type='submit' value='Submit' />
                     </div>
                 </form>
             </div>
