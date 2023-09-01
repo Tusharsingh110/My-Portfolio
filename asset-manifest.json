@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.840e5425.css",
-    "main.js": "/My-Portfolio/static/js/main.3459c5ca.js",
+    "main.css": "/My-Portfolio/static/css/main.defd87b9.css",
+    "main.js": "/My-Portfolio/static/js/main.8d92be91.js",
     "static/media/promptexai.png": "/My-Portfolio/static/media/promptexai.b9b3a0b6a44c67ac8a9c.png",
     "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.ee0ec75cfaa9aaf3ef5bcf2728fd8289.svg",
@@ -23,11 +23,11 @@
     "static/media/Facebook.svg": "/My-Portfolio/static/media/Facebook.d8f9cb1dacd7a9ab36ec9e4dd07209b6.svg",
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
-    "main.840e5425.css.map": "/My-Portfolio/static/css/main.840e5425.css.map",
-    "main.3459c5ca.js.map": "/My-Portfolio/static/js/main.3459c5ca.js.map"
+    "main.defd87b9.css.map": "/My-Portfolio/static/css/main.defd87b9.css.map",
+    "main.8d92be91.js.map": "/My-Portfolio/static/js/main.8d92be91.js.map"
   },
   "entrypoints": [
-    "static/css/main.840e5425.css",
-    "static/js/main.3459c5ca.js"
+    "static/css/main.defd87b9.css",
+    "static/js/main.8d92be91.js"
   ]
 }
