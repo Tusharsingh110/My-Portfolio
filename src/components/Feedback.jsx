@@ -26,7 +26,7 @@ const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
   const fetchData = async () => {
     try {
-      const res = await fetch("/api/Receiving", {
+      const res = await fetch("https://tsportfolio-backend.vercel.app/api/readFeedbacks", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -66,7 +66,7 @@ const Feedback = () => {
 
     const { username, email, type, collab, message } = feedback;
 
-    const res = await fetch("/api/Testing", {
+    const res = await fetch("https://tsportfolio-backend.vercel.app/api/createFeedback", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
