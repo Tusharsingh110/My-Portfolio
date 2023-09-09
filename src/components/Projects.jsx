@@ -1,6 +1,6 @@
 import React from 'react';
 import data from './Projectdata';
-import Cards from './Cards'
+import Cards from './ProjectCards'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -22,6 +22,8 @@ const responsive = {
     items: 1
   }
 };
+
+
 
 const projdata = data.map(curproj => {
 
