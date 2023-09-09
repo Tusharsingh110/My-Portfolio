@@ -45,15 +45,11 @@ export default function Projects() {
       <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">
         <Carousel 
         className='m-auto py-6 '
-        draggable = {false}
-        swipeable = {false} 
         responsive={responsive} 
         autoPlay={true} 
         autoPlaySpeed={3000}  
         transitionDuration={500} 
         infinite = {true}
-        arrows={false} 
-        renderButtonGroupOutside={true}
         >
         {projdata}
         </Carousel>

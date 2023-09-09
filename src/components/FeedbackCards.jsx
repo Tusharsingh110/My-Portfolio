@@ -9,9 +9,9 @@ const FeedbackCards = (props) => {
        <p className='pt-1'>
             <h1 className='font-semibold text-gray-800 dark:text-gray-50'>{props.username}</h1>
        </p>
-            <small className='pb-1 font-extralight text-gray-500 dark:text-gray-50'>{props.email}</small>
+            <small className='pb-1 text-gray-500 dark:text-gray-50'>{props.email}</small>
             <hr />
-      <p className='m-4 ml-0 font-thin text-gray-700 dark:text-gray-50'>{props.message}</p>
+      <p className='m-4 ml-0 text-gray-700 dark:text-gray-50'>{props.message}</p>
       </div>
       
       </div>

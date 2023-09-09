@@ -118,16 +118,16 @@ const Feedback = () => {
   });
 
   return (
-    <div className="w-full p-10 dark:bg-[#33373f] duration-[500ms] dark:text-white">
-      <div className=" py-10 dark:bg-[#33373f] duration-[500ms] ">
-        <div className="max-w-[1300px] mx-auto my-10">
+    <div className="w-full p-10  dark:bg-[#33373f] duration-[500ms] dark:text-white">
+      <div className=" dark:bg-[#33373f] duration-[500ms] mb-10">
+        <div className="max-w-[1300px] mx-auto">
           <div className="text-center text-[#2271ef] dark:bg-[#183777] dark:text-white py-8 text-[20px] md:text-4xl font-bold duration-[150ms]">
             Feedbacks
           </div>
           {/* <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div> */}
           <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">
             <Carousel
-              className="m-auto py-6 "
+              className="m-auto py-8 pb-10"
               responsive={responsive}
               autoPlay={true}
               autoPlaySpeed={3000}
@@ -143,7 +143,7 @@ const Feedback = () => {
       </div>
 
       <div className="text-center text-[#2271ef] dark:bg-[#183777] dark:text-white py-8 text-[20px] md:text-4xl font-bold duration-[150ms]">
-        Feedback Form
+        Feedback/Query Form
       </div>
 
       <div className="mx-auto md:p-10 p-4 max-w-[13000px] justify-center items-center bg-[#EDF3FD] dark:bg-[#262626] ">

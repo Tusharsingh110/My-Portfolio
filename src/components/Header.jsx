@@ -42,12 +42,13 @@ export default function Header() {
           TS<span className='text-[#d62d20]'>.</span>
         </div>
         </a>
-        <div className="md:hidden flex items-center"><button className='mx-4' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} width={30} height={30} alt="theme" /> </button>
-        {toggle ? (
+        <div className="md:hidden flex items-center">
+          <button className='mx-4 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} width={30} height={30} alt="theme" /> </button>
+        {/* {toggle ? (
           <AiOutlineClose onClick={handleToggle} className='text-3xl md:hidden block' />
         ) : (
           <AiOutlineMenu onClick={handleToggle} className='text-3xl md:hidden block' />
-        )}
+        )} */}
         </div>
         <ul className='hidden md:flex gap-10 items-center'>
           {menuItems.map((item) => (
@@ -61,8 +62,10 @@ export default function Header() {
             </a>
           </div>
 
-          <div className=""><button className='w-10 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button></div>
+          <div className="">
+            <button className='w-10 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button>
           
+          </div>
         </ul>
         <ul
           className={`duration-300 md:hidden w-full h-screen fixed bg-black top-[80px] ${
