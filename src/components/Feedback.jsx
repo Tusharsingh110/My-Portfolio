@@ -133,6 +133,8 @@ const Feedback = () => {
               autoPlaySpeed={3000}
               transitionDuration={500}
               infinite={true}
+              showDots={true}
+              removeArrowOnDeviceType={["tablet", "mobile", "desktop", "superLargeDesktop"]}
             >
               {feedData}
             </Carousel>

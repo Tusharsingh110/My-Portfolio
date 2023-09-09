@@ -2,7 +2,7 @@ import React from 'react'
 import {ReactComponent as Leetcode } from "../assets/images/leetcode.svg"
 import {ReactComponent as Github} from "../assets/images/github.svg"
 import {ReactComponent as Linkedin} from "../assets/images/linkedin.svg"
-
+import resume from '../assets/Resume.pdf'
 
 
 
@@ -251,7 +251,7 @@ assistance and guidance throughout their learning journey.</p></li>
     </div>
     </div>
     <div className='m-6 w-[fit-content] mx-auto '>
-    <a href="../assets/Tushar_Singh_personal__Resume_.pdf" className='p-3 w-30 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] text-white  hover:bg-white hover:text-[#2271ef] border hover:border border-[#2271ef] duration-[100ms]' download='Tushar_resume' >Download Resume</a>
+    <a href={resume} className='p-3 w-30 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] text-white  hover:bg-white hover:text-[#2271ef] border hover:border border-[#2271ef] duration-[100ms]' download="Tushar-Resume" >Download Resume</a>
     </div>
     </div>
     

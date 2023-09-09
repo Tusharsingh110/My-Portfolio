@@ -43,7 +43,18 @@ export default function Projects() {
     <div className='max-w-[1300px] mx-auto my-10'>
       <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div>
       <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">
-        <Carousel className='m-auto py-6 ' responsive={responsive} autoPlay={true} autoPlaySpeed={3000}  transitionDuration={500} infinite = {true}>
+        <Carousel 
+        className='m-auto py-6 '
+        draggable = {false}
+        swipeable = {false} 
+        responsive={responsive} 
+        autoPlay={true} 
+        autoPlaySpeed={3000}  
+        transitionDuration={500} 
+        infinite = {true}
+        arrows={false} 
+        renderButtonGroupOutside={true}
+        >
         {projdata}
         </Carousel>
       </div>
