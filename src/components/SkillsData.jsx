@@ -44,6 +44,15 @@ const skillsdata = [
      label: "C",
      imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
     },
+    {
+     id : 10,
+     label: "Mongo DB",
+     imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    {
+     id : 11,
+     label: "Next JS",
+     imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+    },
 ]
-
 export default skillsdata

@@ -73,7 +73,7 @@ export default function Resume() {
           <div className='space-y-1 px-2'>
             <li><p>Database Management Systems</p></li>
             <li><p>Software Engineering</p></li>
-            <li><p>AI and ML</p></li>
+            {/* <li><p>AI and ML</p></li> */}
           </div>
         </div>
       </ul>
@@ -87,8 +87,8 @@ export default function Resume() {
       <div>
         <p className='py-2 font-semibold'>Languages</p>
         <ul className='marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-1'>
-          <li><p>C/C++</p></li>
-          <li><p>Python</p></li>
+          <li><p>C++</p></li>
+          <li><p>C</p></li>
         </ul>
       </div>
       <div>
