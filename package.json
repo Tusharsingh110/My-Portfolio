@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": "https://Tusharsingh110.github.io/My-Portfolio",
+  "homepage": "https://tusharsingh110.github.io/My-Portfolio/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3000",
