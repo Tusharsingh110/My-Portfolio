@@ -41,7 +41,15 @@ const data= [
         pname:'Prompt-EX-AI',
         rlink: 'https://github.com/Tusharsingh110/PromptEx-AI',
         llink: 'https://prompt-ex-ai.vercel.app/'
-    }    
+    },
+
+    {
+        id: 6,
+        image: require("../assets/images/gridpathfinder.png"),
+        pname:'Grid-Pathfinder',
+        rlink: 'https://github.com/Tusharsingh110/Grid-Pathfinder',
+        llink: 'https://tusharsingh110.github.io/Grid-Pathfinder'
+    }  
 
 ]
 
