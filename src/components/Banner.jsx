@@ -1,6 +1,6 @@
 import React from 'react';
 import imge from "../assets/images/me1.jpeg";
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 
 export default function Banner() {
   return (
@@ -12,13 +12,13 @@ export default function Banner() {
           <div className='mt-6'>Hii</div>
           <div className='mt-6'>I am <span className='mt-6'>Tushar Singh</span></div>
           <div className='my-6'>
-            <Typed
+            {/* <Typed
               className='font-bold drop-shadow-md'
               strings={['Web Developer...', 'Student at IIIT BH...', 'Freelancer...','Photographer...']}
               typeSpeed={80}
               backSpeed={50}
               loop={true}
-            />
+            /> */}
           </div>
           
         </div>
