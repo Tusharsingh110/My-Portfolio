@@ -45,7 +45,7 @@ export default function Resume() {
     <div className='text-[16px] md:text-sm'>
       <p className='py-2 font-semibold'>| INDIAN INSTITUTE OF INFORMATION TECHNOLOGY, BHAGALPUR</p>
       <p className='p-1'>B.TECH | COMPUTER SCIENCE AND ENGINEERING</p>
-      <p className='p-1'>CGPA | 8.44</p>
+      <p className='p-1'>CGPA | 8.49</p>
     </div>
   </div>
 
@@ -73,7 +73,7 @@ export default function Resume() {
           <div className='space-y-1 px-2'>
             <li><p>Database Management Systems</p></li>
             <li><p>Software Engineering</p></li>
-            {/* <li><p>AI and ML</p></li> */}
+            <li><p>Machine Learning</p></li>
           </div>
         </div>
       </ul>
@@ -89,6 +89,7 @@ export default function Resume() {
         <ul className='marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-1'>
           <li><p>C++</p></li>
           <li><p>C</p></li>
+          <li><p>Python</p></li>
         </ul>
       </div>
       <div>
@@ -111,6 +112,19 @@ export default function Resume() {
 
   <div className='bg-[#f8f8f8] dark:bg-[#4b5361] dark:text-white text-black p-4 my-2 rounded-2xl shadow transition duration-100 hover:shadow-xl'>
     <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
+    <div className='text-[16px] md:text-[14px]'>
+        <p className='py-2 font-semibold'>|Lumiq |SDE</p>
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|FEB 2024 - Present | Intern</p>
+        <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
+        <div className=''>
+            <div className='space-y-1 px-2'>
+            <li><p> <span className='font-semibold'>Applications:</span> Developed highly dynamic and scalable application using React + Tailwind CSS.</p></li>
+            <li><p> <span className='font-semibold'>Data Science:</span> Implemented various Machine learning techniques to accurately predict Claim Amount keeping important features under consideration.</p></li>
+            <li><p> <span className='font-semibold'>Data Engineering:</span> Created various data pipelines for seamless data ingestion and preprocessing.</p></li>
+            </div>
+        </div>
+        </ul>
+    </div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|CHEGG INC |SUBJECT MATTER EXPERT</p>
         <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|MAR 2022 - Present | Freelance</p>
@@ -202,7 +216,7 @@ assistance and guidance throughout their learning journey.</p></li>
             </li>
             <li>
                 <p>
-                <span className='font-semibold'>400+ days streak on LeetCode</span> with <span className='font-semibold'>500+ questions</span> solved, currently in <span className='font-semibold'>Top 13.8% worldwide</span>.
+                <span className='font-semibold'>400+ days streak on LeetCode</span> with <span className='font-semibold'>600+ questions</span> solved, currently in <span className='font-semibold'>Top 13% worldwide</span>.
                 </p>
             </li>
             </div>
@@ -215,7 +229,7 @@ assistance and guidance throughout their learning journey.</p></li>
     <div className='md:text-2xl text:xl md:font-thin'>ROLES AND RESPONSIBILITIES</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|PyC INCHARGE |CODING CLUB, IIIT BHAGALPUR</p>
-        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|JAN 2023 - PRESENT</p>
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|JAN 2023 - JAN 2024</p>
         <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
