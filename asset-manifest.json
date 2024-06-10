@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.b90638f0.css",
-    "main.js": "/My-Portfolio/static/js/main.0a06d600.js",
+    "main.js": "/My-Portfolio/static/js/main.a4a3370b.js",
     "static/media/promptexai.png": "/My-Portfolio/static/media/promptexai.b9b3a0b6a44c67ac8a9c.png",
-    "static/media/Resume.pdf": "/My-Portfolio/static/media/Resume.f0f16c3491251bab4412.pdf",
     "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
+    "static/media/Resume.pdf": "/My-Portfolio/static/media/Resume.e22cdd93379b2360c222.pdf",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.31a6082e58800b9e51053f0fc17e7231.svg",
     "static/media/me1.jpeg": "/My-Portfolio/static/media/me1.e0eb260edb8f09087549.jpeg",
     "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
@@ -26,10 +26,10 @@
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
     "main.b90638f0.css.map": "/My-Portfolio/static/css/main.b90638f0.css.map",
-    "main.0a06d600.js.map": "/My-Portfolio/static/js/main.0a06d600.js.map"
+    "main.a4a3370b.js.map": "/My-Portfolio/static/js/main.a4a3370b.js.map"
   },
   "entrypoints": [
     "static/css/main.b90638f0.css",
-    "static/js/main.0a06d600.js"
+    "static/js/main.a4a3370b.js"
   ]
 }
