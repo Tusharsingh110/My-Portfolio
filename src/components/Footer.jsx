@@ -6,6 +6,7 @@ import {ReactComponent as Twitter } from "../assets/images/Twitter.svg"
 
 
 export default function Footer() {
+    let currentYear = new Date().getFullYear();
     return (
         <>  
             <div className='bg-[#2271ef]  w-full h-[fit-content] md:text-l text-white  mx-auto pt-8 px-2  dark:bg-[#1d1f23] dark:text-white duration-[150ms]'>
@@ -60,7 +61,7 @@ export default function Footer() {
 
 
                 </div>
-                <p className='text-white w-[fit-content] pt-2 pb-2 mx-auto '>Copyright © 2023 TS. All rights reserved</p>
+                <p className='text-white w-[fit-content] pt-2 pb-2 mx-auto '>Copyright © {currentYear} TS. All rights reserved</p>
                 
               
             </div>

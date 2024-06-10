@@ -3,6 +3,9 @@ import data from './Projectdata';
 import Cards from './ProjectCards'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import "../index.css"
+import "../App.css"
+
 
 const responsive = {
   superLargeDesktop: {
@@ -39,7 +42,7 @@ const projdata = data.map(curproj => {
 
 export default function Projects() {
   return (
-    <div className=" py-10 dark:bg-[#33373f] duration-[500ms] ">
+    <div className="bgred py-10 dark:bg-[#33373f] duration-[500ms] ">
     <div className='max-w-[1300px] mx-auto my-10'>
       <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div>
       <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">

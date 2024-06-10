@@ -40,3 +40,23 @@
 .svgg {
   z-index: -1;
 }
+
+
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+  right: calc(1%);
+  background-color: #2271ef;
+}
+
+
+.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
+  left: calc(1%);
+  background-color: #2271ef;
+}
+
+.react-multiple-carousel__arrow:hover.react-multiple-carousel__arrow--right {
+  background-color: #429cff; /* Lighter blue on hover */
+}
+
+.react-multiple-carousel__arrow:hover.react-multiple-carousel__arrow--left {
+  background-color: #429cff; /* Lighter blue on hover */
+}

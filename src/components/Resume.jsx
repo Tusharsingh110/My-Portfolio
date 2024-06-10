@@ -21,7 +21,7 @@ export default function Resume() {
 
     <div className='text-center md:text-2xl p-4'>
     <p className='py-1'>Tushar Singh</p>
-    <div className='md:flex justify-center'>
+    <div className='md:flex justify-center text-center items-center gap-4'>
     <p>tusharsingh6t@gmail.com </p>
     <p className='py-1'> +91 6388 409 329</p>
     </div>
@@ -114,13 +114,12 @@ export default function Resume() {
     <div className='md:text-2xl text:xl md:font-thin'>EXPERIENCE</div>
     <div className='text-[16px] md:text-[14px]'>
         <p className='py-2 font-semibold'>|Lumiq |SDE</p>
-        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|FEB 2024 - Present | Intern</p>
+        <p className='pb-2 font-semibold text-slate-500 dark:text-slate-200'>|FEB 2024 - Present | Full-Time</p>
         <ul className="marker:text-[#2271ef] dark:marker:text-white list-disc pl-5 space-y-3">
         <div className=''>
             <div className='space-y-1 px-2'>
-            <li><p> <span className='font-semibold'>Applications:</span> Developed highly dynamic and scalable application using React + Tailwind CSS.</p></li>
-            <li><p> <span className='font-semibold'>Data Science:</span> Implemented various Machine learning techniques to accurately predict Claim Amount keeping important features under consideration.</p></li>
-            <li><p> <span className='font-semibold'>Data Engineering:</span> Created various data pipelines for seamless data ingestion and preprocessing.</p></li>
+            <li><p> <span className='font-semibold'>Developed Dynamic Components:</span> Created and optimized reusable front-end components using React.js and Tailwind CSS to enhance user experience and maintainability.</p></li>
+            <li><p> <span className='font-semibold'>API Integration and Testing:</span> Integrated components with backend APIs and performed comprehensive testing to ensure functionality, reliability, and performance.</p></li>
             </div>
         </div>
         </ul>
