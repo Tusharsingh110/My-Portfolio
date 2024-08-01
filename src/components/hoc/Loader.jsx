@@ -1,10 +1,9 @@
 import React from 'react'
+import './loader.css'
 
 const Loader = () => {
   return (
-    <div>
-      Loadinf
-    </div>
+    <div className="loader"></div>
   )
 }
 

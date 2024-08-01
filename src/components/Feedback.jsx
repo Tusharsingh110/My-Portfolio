@@ -24,7 +24,7 @@ const responsive = {
 
 const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
-  const fetchData = async () => {
+  const fetchFeedbacks = async () => {
     try {
       const res = await fetch("https://tsportfolio-backend.vercel.app/api/readFeedbacks", {
         method: "GET",
@@ -47,7 +47,7 @@ const Feedback = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchFeedbacks();
   }, []);
 
   const [feedback, setFeedback] = useState({
@@ -89,7 +89,7 @@ const Feedback = () => {
       window.alert("Feedback sent!!");
       console.log("Feedback sent!!");
     }
-    fetchData();
+    fetchFeedbacks();
     // Reset the form
     setFeedback({
       username: "",
