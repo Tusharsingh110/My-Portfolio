@@ -35,7 +35,6 @@ const Feedback = () => {
         setFeedbackData(response.data.data); 
       } catch (error) {
         console.log("ERROR:", error);
-        setLoading(false);
       }
     };
 
@@ -81,7 +80,6 @@ const Feedback = () => {
       window.alert("Feedback sent!!");
       console.log("Feedback sent!!");
     }
-    fetchData();
     // Reset the form
     setFeedback({
       username: "",
