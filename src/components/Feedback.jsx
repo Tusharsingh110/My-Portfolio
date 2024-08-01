@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FeedbackCards from "./FeedbackCards";
+import { fetchFeedbacks } from "../services/api.service";
 
 const responsive = {
   superLargeDesktop: {
@@ -24,30 +25,21 @@ const responsive = {
 
 const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
-  const fetchData = async () => {
-    try {
-      const res = await fetch("https://tsportfolio-backend.vercel.app/api/readFeedbacks", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-type": "application/json",
-        },
-      });
-      const data = await res.json();
-      // console.log(data)
-      setFeedbackData(data);
-      // console.log(feedbackData)
-      if (!res.status === 200) {
-        const error = new Error(res.error);
-        throw error;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
+
 
   useEffect(() => {
-    fetchData();
+    const getFeedbacks = async () => {
+      try {
+        const response = await fetchFeedbacks();
+        setFeedbackData(response.data.data); 
+      } catch (error) {
+        console.log("ERROR:", error);
+        setLoading(false);
+      }
+    };
+
+    getFeedbacks();
   }, []);
 
   const [feedback, setFeedback] = useState({
