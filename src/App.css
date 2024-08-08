@@ -60,3 +60,12 @@
 .react-multiple-carousel__arrow:hover.react-multiple-carousel__arrow--left {
   background-color: #429cff; /* Lighter blue on hover */
 }
+
+input {
+  border: 2px solid #429dff44;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}

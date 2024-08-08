@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Modal from "./common/modal/Modal";
 
 export default function Header() {
@@ -110,10 +109,20 @@ export default function Header() {
         </ul>
       </div>
       <Modal
-        modalVis={showLoginModal}
+        isModalOpen={showLoginModal}
         setIsModalOpen={setShowLoginModal}
         centered={true}
-      />
+        title={"Login"}
+      >
+        <div className="dark:text-white dark:bg-slate-500 flex flex-col">
+        
+        <div className="form-control">
+        <label htmlFor="username">Username/E-mail</label>
+        <input type="text" className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm" name="username"/>
+        </div>
+
+        </div>
+      </Modal>
     </div>
   );
 }
