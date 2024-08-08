@@ -18,7 +18,6 @@ function App() {
    <Resume />
    <Feedback/>
    <Footer />
-   
    {/* <Pathfinder/> */}
    </>
   );
