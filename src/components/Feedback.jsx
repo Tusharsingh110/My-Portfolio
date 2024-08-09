@@ -182,11 +182,13 @@ const Feedback = () => {
                 <option value="other">Other</option>
               </select>
 
-              <div className="mt-6">
+              <div className="mt-6 flex gap-2">
                 <label
                   htmlFor="collab"
                   className="accent-[#2271ef] -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
                 >
+                </label>
+
                   <input
                     onChange={handleChange}
                     type="checkbox"
@@ -195,7 +197,6 @@ const Feedback = () => {
                     checked={feedback.collab}
                   />
                   If you want to collaborate just check this check box
-                </label>
               </div>
             </div>
 

@@ -14,7 +14,7 @@ export const fetchFeedbacks = async () => {
 
         // Check if URL is defined
         if (!url) {
-            throw new Error("REACT_APP_BACKEND_URL is not defined in the environment variables.");
+            throw new Error("URL not found.");
         }
         const response = await axios.post(url, payload);
         return response.data;
@@ -23,3 +23,15 @@ export const fetchFeedbacks = async () => {
         throw new Error("Error fetching feedbacks.");
     }
 };
+
+export const login = async (credentials) => {
+    try { 
+        const url = BASE_URL + ROUTES.USER.LOGIN;
+        console.log(url, credentials)
+        const response = await axios.post(url, credentials);
+
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}

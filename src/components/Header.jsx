@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "./common/modal/Modal";
+import { login } from "../services/api.service";
+import LoginModal from "./common/modal/LoginModal";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
   let localTheme = localStorage.getItem("theme")
     ? JSON.parse(localStorage.getItem("theme"))
     : false;
-  const [theme, setTheme] = useState(localTheme);
+    const [toggle, setToggle] = useState(false);
+    const [theme, setTheme] = useState(localTheme);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
 
   let themeImg = theme ? "moon.png" : "sun.png";
 
@@ -15,7 +18,7 @@ export default function Header() {
     setTheme((prevTheme) => !prevTheme);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!theme) {
       document.documentElement.classList.remove("dark");
     } else {
@@ -24,6 +27,7 @@ export default function Header() {
     const updatedTheme = JSON.stringify(theme);
     localStorage.setItem("theme", updatedTheme);
   }, [theme]);
+
 
   const menuItems = [
     // { id: 1, title: 'Home' },
@@ -92,7 +96,12 @@ export default function Header() {
             </button>
           </div>
 
-          <button className="font-bold" onClick={()=> {setShowLoginModal(true)}}>
+          <button
+            className="font-bold"
+            onClick={() => {
+              setShowLoginModal(true);
+            }}
+          >
             Login
           </button>
         </ul>
@@ -108,21 +117,10 @@ export default function Header() {
           ))}
         </ul>
       </div>
-      <Modal
-        isModalOpen={showLoginModal}
-        setIsModalOpen={setShowLoginModal}
-        centered={true}
-        title={"Login"}
-      >
-        <div className="dark:text-white dark:bg-slate-500 flex flex-col">
-        
-        <div className="form-control">
-        <label htmlFor="username">Username/E-mail</label>
-        <input type="text" className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm" name="username"/>
-        </div>
-
-        </div>
-      </Modal>
+        <LoginModal
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+        />
     </div>
   );
 }

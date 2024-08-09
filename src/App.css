@@ -62,10 +62,25 @@
 }
 
 input {
-  border: 2px solid #429dff44;
+  border: 2px solid #2271ef5b;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
+
+/* Custom CSS for Ant Design Modal's Ok button */
+.ant-modal-footer .ant-btn-primary {
+  background-color: #2271ef; /* Your desired background color */
+}
+
+textarea {
+  border: 2px solid #2271ef5b;
+}
+
+select {
+  border: 2px solid #2271ef5b;
+}
+
