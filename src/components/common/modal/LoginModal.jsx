@@ -1,35 +1,53 @@
 import { useState } from "react";
 import { login } from "../../../services/api.service";
 import Modal from "./Modal";
+import Loader from "../../hoc/Loader";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../../features/user/user.slice";
 
 const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
+  // const state = useSelector(state);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const emptyCredentials = { email: "", password: "" };
   const [credentails, setCredentails] = useState(emptyCredentials);
 
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentails((prevState) => ({ ...prevState, [name]: value }));
   };
-
+ 
   const handleLogin = async () => {
     try {
+      setLoading(true);
       setError("");
       const response = await login(credentails);
-      console.log(response);
+      dispatch(logIn(response.usermail));
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('usermail', response.usermail);
       setShowLoginModal(false);
     } catch (error) {
+      console.log(error)
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <Modal
       isModalOpen={showLoginModal}
-      setIsModalOpen={setShowLoginModal}
+      setIsModalOpen={setShowLoginModal} 
       centered={true}
       title="Login"
-      okText="Login"
+      okText={
+        <>
+          {loading && <Loader />}
+          <p>Login</p>
+        </>
+      }
       onOk={handleLogin}
       onCancel={() => {
         setError("");

@@ -27,9 +27,7 @@ export const fetchFeedbacks = async () => {
 export const login = async (credentials) => {
     try { 
         const url = BASE_URL + ROUTES.USER.LOGIN;
-        console.log(url, credentials)
         const response = await axios.post(url, credentials);
-
         return response.data;
     } catch (error) {
         throw (error.response.data);

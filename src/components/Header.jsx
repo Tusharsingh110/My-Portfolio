@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Modal from "./common/modal/Modal";
-import { login } from "../services/api.service";
 import LoginModal from "./common/modal/LoginModal";
+import { useSelector } from "react-redux";
+import LogoutModal from "./common/modal/LogoutModal";
 
 export default function Header() {
+  const token = localStorage.getItem("token");
+  const usermail = localStorage.getItem("usermail");
+
   let localTheme = localStorage.getItem("theme")
     ? JSON.parse(localStorage.getItem("theme"))
     : false;
-    const [toggle, setToggle] = useState(false);
-    const [theme, setTheme] = useState(localTheme);
+  const [toggle, setToggle] = useState(false);
+  const [theme, setTheme] = useState(localTheme);
   const [showLoginModal, setShowLoginModal] = useState(false);
-
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   let themeImg = theme ? "moon.png" : "sun.png";
 
@@ -28,7 +31,6 @@ export default function Header() {
     localStorage.setItem("theme", updatedTheme);
   }, [theme]);
 
-
   const menuItems = [
     // { id: 1, title: 'Home' },
     // { id: 2, title: 'About' },
@@ -39,6 +41,7 @@ export default function Header() {
   const handleToggle = () => {
     setToggle(!toggle);
   };
+
 
   return (
     <div className="bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17">
@@ -95,15 +98,28 @@ export default function Header() {
               />{" "}
             </button>
           </div>
-
-          <button
-            className="font-bold"
-            onClick={() => {
-              setShowLoginModal(true);
-            }}
-          >
-            Login
-          </button>
+          {[null, undefined, " ", ""].includes(token) ? (
+            <button
+              className="font-bold"
+              onClick={() => {
+                setShowLoginModal(true);
+              }}
+            >
+              Login
+            </button>
+          ) : (
+            <div className="flex gap-2">
+              <p>Hi {usermail ?? "user"}, Not you?</p>
+              <button
+                className="font-bold"
+                onClick={() => {
+                  setShowLogoutModal(true);
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </ul>
         <ul
           className={`duration-300 md:hidden w-full h-screen fixed bg-black top-[80px] ${
@@ -117,10 +133,14 @@ export default function Header() {
           ))}
         </ul>
       </div>
-        <LoginModal
-          showLoginModal={showLoginModal}
-          setShowLoginModal={setShowLoginModal}
-        />
+      <LoginModal
+        showLoginModal={showLoginModal}
+        setShowLoginModal={setShowLoginModal}
+      />
+      <LogoutModal
+        showLogoutModal={showLogoutModal}
+        setShowLogoutModal={setShowLogoutModal}
+      />
     </div>
   );
 }
