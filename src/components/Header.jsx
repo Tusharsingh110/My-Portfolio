@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import React, { useState, useEffect } from "react";
+import LoginModal from "./common/modal/LoginModal";
+import { useSelector } from "react-redux";
+import LogoutModal from "./common/modal/LogoutModal";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
-  let localTheme = localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : false
-  const [theme, setTheme] = useState(localTheme);
+  const token = localStorage.getItem("token");
+  const usermail = localStorage.getItem("usermail");
 
-  let themeImg = theme ? 'moon.png' : 'sun.png'
-  
+  let localTheme = localStorage.getItem("theme")
+    ? JSON.parse(localStorage.getItem("theme"))
+    : false;
+  const [toggle, setToggle] = useState(false);
+  const [theme, setTheme] = useState(localTheme);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  let themeImg = theme ? "moon.png" : "sun.png";
+
   const toggleTheme = () => {
-    setTheme(prevTheme => !prevTheme)
-  }
-  
-  React.useEffect(() => {
-    if(!theme) {
-      document.documentElement.classList.remove("dark")
+    setTheme((prevTheme) => !prevTheme);
+  };
+
+  useEffect(() => {
+    if (!theme) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
     }
-    else {
-      document.documentElement.classList.add("dark")
-    }
-    const updatedTheme = JSON.stringify(theme)
-    localStorage.setItem("theme",updatedTheme)
-  },[theme])
+    const updatedTheme = JSON.stringify(theme);
+    localStorage.setItem("theme", updatedTheme);
+  }, [theme]);
 
   const menuItems = [
     // { id: 1, title: 'Home' },
@@ -34,52 +42,105 @@ export default function Header() {
     setToggle(!toggle);
   };
 
+
   return (
-    <div className='bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17'>
-      <div className='max-w-[1200px] py-1 flex justify-between items-center mx-auto'>
+    <div className="bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17">
+      <div className="max-w-[1200px] py-1 flex justify-between items-center mx-auto">
         <a href="https://Tusharsingh110.github.io/My-Portfolio">
-        <div className='text-4xl font-bold ml-5'>
-          TS<span className='text-[#d62d20]'>.</span>
-        </div>
+          <div className="text-4xl font-bold ml-5">
+            TS<span className="text-[#d62d20]">.</span>
+          </div>
         </a>
         <div className="md:hidden flex items-center">
-          <button className='mx-4 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} width={30} height={30} alt="theme" /> </button>
-        {/* {toggle ? (
+          <button
+            className="mx-4 hover:rotate-360 transition-transform duration-500"
+            onClick={toggleTheme}
+          >
+            {" "}
+            <img
+              src={require(`../assets/images/${themeImg}`)}
+              width={30}
+              height={30}
+              alt="theme"
+            />{" "}
+          </button>
+          {/* {toggle ? (
           <AiOutlineClose onClick={handleToggle} className='text-3xl md:hidden block' />
         ) : (
           <AiOutlineMenu onClick={handleToggle} className='text-3xl md:hidden block' />
         )} */}
         </div>
-        <ul className='hidden md:flex gap-10 items-center'>
+        <ul className="hidden md:flex gap-10 items-center">
           {menuItems.map((item) => (
-            <li className='li' key={item.id}>
+            <li className="li" key={item.id}>
               {item.title}
             </li>
           ))}
-          <div className='rounded-3xl duration-[100ms] font-bold p-2  ease-in-out hover:bg-white hover:text-[#2271ef] border-[1px] border-white hover:border-[#2271ef]'>
-            <a href='https://www.linkedin.com/in/tusharsingh17/ ' target='_blank' rel='noreferrer'>
+          <div className="rounded-3xl duration-[100ms] font-bold p-2  ease-in-out hover:bg-white hover:text-[#2271ef] border-[1px] border-white hover:border-[#2271ef]">
+            <a
+              href="https://www.linkedin.com/in/tusharsingh17/ "
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>Let's Connect</button>
             </a>
           </div>
 
           <div className="">
-            <button className='w-10 hover:rotate-360 transition-transform duration-500' onClick={toggleTheme}> <img src={require(`../assets/images/${themeImg}`)} alt="theme" /> </button>
-          
+            <button
+              className="w-10 hover:rotate-360 transition-transform duration-500"
+              onClick={toggleTheme}
+            >
+              {" "}
+              <img
+                src={require(`../assets/images/${themeImg}`)}
+                alt="theme"
+              />{" "}
+            </button>
           </div>
+          {[null, undefined, " ", ""].includes(token) ? (
+            <button
+              className="font-bold"
+              onClick={() => {
+                setShowLoginModal(true);
+              }}
+            >
+              Login
+            </button>
+          ) : (
+            <div className="flex gap-2">
+              <p>Hi {usermail ?? "user"}, Not you?</p>
+              <button
+                className="font-bold"
+                onClick={() => {
+                  setShowLogoutModal(true);
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </ul>
         <ul
           className={`duration-300 md:hidden w-full h-screen fixed bg-black top-[80px] ${
-            toggle ? 'left-[0]' : 'left-[-100%]'
+            toggle ? "left-[0]" : "left-[-100%]"
           }`}
         >
           {menuItems.map((item) => (
-            <li className='p-5' key={item.id}>
+            <li className="p-5" key={item.id}>
               {item.title}
             </li>
           ))}
         </ul>
-        
       </div>
+      <LoginModal
+        showLoginModal={showLoginModal}
+        setShowLoginModal={setShowLoginModal}
+      />
+      <LogoutModal
+        showLogoutModal={showLogoutModal}
+        setShowLogoutModal={setShowLogoutModal}
+      />
     </div>
   );
 }

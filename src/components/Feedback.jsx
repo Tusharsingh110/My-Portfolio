@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FeedbackCards from "./FeedbackCards";
+import { fetchFeedbacks } from "../services/api.service";
 
 const responsive = {
   superLargeDesktop: {
@@ -24,30 +25,20 @@ const responsive = {
 
 const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
-  const fetchFeedbacks = async () => {
-    try {
-      const res = await fetch("https://tsportfolio-backend.vercel.app/api/readFeedbacks", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-type": "application/json",
-        },
-      });
-      const data = await res.json();
-      // console.log(data)
-      setFeedbackData(data);
-      // console.log(feedbackData)
-      if (!res.status === 200) {
-        const error = new Error(res.error);
-        throw error;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
+
 
   useEffect(() => {
-    fetchFeedbacks();
+    const getFeedbacks = async () => {
+      try {
+        const response = await fetchFeedbacks();
+        setFeedbackData(response.data.data); 
+      } catch (error) {
+        console.log("ERROR:", error);
+      }
+    };
+
+    getFeedbacks();
   }, []);
 
   const [feedback, setFeedback] = useState({
@@ -89,7 +80,6 @@ const Feedback = () => {
       window.alert("Feedback sent!!");
       console.log("Feedback sent!!");
     }
-    fetchFeedbacks();
     // Reset the form
     setFeedback({
       username: "",
@@ -192,11 +182,13 @@ const Feedback = () => {
                 <option value="other">Other</option>
               </select>
 
-              <div className="mt-6">
+              <div className="mt-6 flex gap-2">
                 <label
                   htmlFor="collab"
                   className="accent-[#2271ef] -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
                 >
+                </label>
+
                   <input
                     onChange={handleChange}
                     type="checkbox"
@@ -205,7 +197,6 @@ const Feedback = () => {
                     checked={feedback.collab}
                   />
                   If you want to collaborate just check this check box
-                </label>
               </div>
             </div>
 
