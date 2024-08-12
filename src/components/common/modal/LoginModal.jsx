@@ -56,7 +56,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
     >
       <div className="flex flex-col gap-4">
         <div className="form-control">
-          <label htmlFor="eail">E-mail</label>
+          <label htmlFor="email">E-mail</label>
           <input
             type="email"
             value={credentails.email}

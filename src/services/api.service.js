@@ -11,11 +11,6 @@ export const fetchFeedbacks = async () => {
 
     try {
         const url = BASE_URL + ROUTES.FEEDBACK.FETCH_FEEDBACKS;
-
-        // Check if URL is defined
-        if (!url) {
-            throw new Error("URL not found.");
-        }
         const response = await axios.post(url, payload);
         return response.data;
     } catch (error) {
@@ -28,6 +23,17 @@ export const login = async (credentials) => {
     try { 
         const url = BASE_URL + ROUTES.USER.LOGIN;
         const response = await axios.post(url, credentials);
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}
+
+export const signUp = async (payload) => {
+    try { 
+        const url = BASE_URL + ROUTES.USER.SIGN_UP;
+        console.log(payload)
+        const response = await axios.post(url, payload);
         return response.data;
     } catch (error) {
         throw (error.response.data);

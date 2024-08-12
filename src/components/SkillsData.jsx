@@ -21,7 +21,7 @@ const skillsdata = [
     },
     {
      id : 5,
-     label: "Gtihub",
+     label: "Github",
      imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
     },
     {
@@ -51,8 +51,8 @@ const skillsdata = [
     },
     {
      id : 11,
-     label: "Next JS",
-     imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+     label: "Angular",
+     imgsrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
     },
 ]
 export default skillsdata

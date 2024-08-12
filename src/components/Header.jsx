@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoginModal from "./common/modal/LoginModal";
 import { useSelector } from "react-redux";
 import LogoutModal from "./common/modal/LogoutModal";
+import SignupModal from "./common/modal/SignupModal";
 
 export default function Header() {
   const token = localStorage.getItem("token");
@@ -14,6 +15,8 @@ export default function Header() {
   const [theme, setTheme] = useState(localTheme);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
+
 
   let themeImg = theme ? "moon.png" : "sun.png";
 
@@ -45,7 +48,7 @@ export default function Header() {
 
   return (
     <div className="bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17">
-      <div className="max-w-[1200px] py-1 flex justify-between items-center mx-auto">
+      <div className="max-w-[1400px] py-1 flex justify-between items-center mx-auto">
         <a href="https://Tusharsingh110.github.io/My-Portfolio">
           <div className="text-4xl font-bold ml-5">
             TS<span className="text-[#d62d20]">.</span>
@@ -99,17 +102,28 @@ export default function Header() {
             </button>
           </div>
           {[null, undefined, " ", ""].includes(token) ? (
+            <div className="flex gap-4">
             <button
               className="font-bold"
               onClick={() => {
                 setShowLoginModal(true);
               }}
-            >
+              >
               Login
             </button>
+           {!token && <button
+              className="font-bold"
+              onClick={() => {
+                setShowSignupModal(true);
+              }}
+            >
+              Signup
+            </button>}
+            
+              </div>
           ) : (
             <div className="flex gap-2">
-              <p>Hi {usermail ?? "user"}, Not you?</p>
+              <p>Hi {usermail.split('@')[0] ?? "user"}, Not you?</p>
               <button
                 className="font-bold"
                 onClick={() => {
@@ -140,6 +154,10 @@ export default function Header() {
       <LogoutModal
         showLogoutModal={showLogoutModal}
         setShowLogoutModal={setShowLogoutModal}
+      />
+      <SignupModal
+        showSignupModal={showSignupModal}
+        setShowSignupModal={setShowSignupModal}
       />
     </div>
   );

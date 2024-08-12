@@ -19,6 +19,14 @@ const LogoutModal = ({showLogoutModal, setShowLogoutModal}) => {
     okText={"Sure"}
     onOk={handleLogout}
     onCancel={() => setShowLogoutModal(false)}
+    centered={true}
+    okButtonProps={{
+      style: {
+        backgroundColor: 'white',
+        color: 'red',
+        border: '1px solid red'
+      }
+    }}
     >
         Leaving so soon?
     </Modal>
