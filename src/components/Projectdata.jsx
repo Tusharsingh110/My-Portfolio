@@ -49,6 +49,14 @@ const data= [
         pname:'Grid-Pathfinder',
         rlink: 'https://github.com/Tusharsingh110/Grid-Pathfinder',
         llink: 'https://tusharsingh110.github.io/Grid-Pathfinder'
+    },
+
+    {
+        id: 7,
+        image: require("../assets/images/TS-Healthcare.jpeg"),
+        pname:'TS-Healthcare',
+        rlink: 'https://github.com/Tusharsingh110/TS_HealthCare_Insurence_Frontend',
+        llink: 'https://tshealthcare.netlify.app/'
     }  
 
 ]
