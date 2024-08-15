@@ -66,13 +66,9 @@ const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
       isModalOpen={showSignupModal}
       setIsModalOpen={setShowSignupModal}
       centered={true}
-      title="SignUp"
-      okText={
-        <>
-          {loading && <Loader />}
-          <p>Sign Up</p>
-        </>
-      }
+      title="Sign Up"
+      okText="Sign Up"
+      confirmLoading={loading}
       onOk={handleSignup}
       onCancel={() => {
         setErrors("");
@@ -113,7 +109,7 @@ const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
           />
         </div>
         {errors &&
-        <ul className="absolute bottom-5 m-2"> 
+        <ul className="absolute bottom-5 my-2"> 
           {errors.map((errorMsg, index) => <li className="text-red-600 text-xs" key={index}>{errorMsg}</li>)}
         </ul>
           }
