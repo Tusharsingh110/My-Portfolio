@@ -45,12 +45,8 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
       setIsModalOpen={setShowLoginModal} 
       centered={true}
       title="Login"
-      okText={
-        <>
-          {loading && <Loader />}
-          <p>Login</p>
-        </>
-      }
+      okText="Login"
+      confirmLoading={loading}
       onOk={handleLogin}
       onCancel={() => {
         setError("");
