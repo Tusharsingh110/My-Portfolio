@@ -1,17 +1,14 @@
-import axios from 'axios';
+import axiosInstance from './axios.service';
 import { ROUTES } from '../constants/routes.constants';
 
-const BASE_URL = ROUTES.BASE_URL;
 
 export const fetchFeedbacks = async () => {
     const payload = {
         limit: 5,
         page: 1
     };
-
     try {
-        const url = BASE_URL + ROUTES.FEEDBACK.FETCH_FEEDBACKS;
-        const response = await axios.post(url, payload);
+        const response = await axiosInstance.post(ROUTES.FEEDBACK.FETCH_FEEDBACKS, payload);
         return response.data;
     } catch (error) {
         console.error("Error fetching feedbacks:", error);
@@ -20,9 +17,8 @@ export const fetchFeedbacks = async () => {
 };
 
 export const login = async (credentials) => {
-    try { 
-        const url = BASE_URL + ROUTES.USER.LOGIN;
-        const response = await axios.post(url, credentials);
+    try {
+        const response = await axiosInstance.post(ROUTES.USER.LOGIN, credentials);
         return response.data;
     } catch (error) {
         throw (error.response.data);
@@ -30,12 +26,21 @@ export const login = async (credentials) => {
 }
 
 export const signUp = async (payload) => {
-    try { 
-        const url = BASE_URL + ROUTES.USER.SIGN_UP;
-        console.log(payload)
-        const response = await axios.post(url, payload);
+    try {
+        const response = await axiosInstance.post(ROUTES.USER.SIGN_UP, payload);
         return response.data;
     } catch (error) {
         throw (error.response.data);
+    }
+}
+
+export const sendFeedback = async (feedback) => {
+    try {
+        const response = await axiosInstance.post(ROUTES.FEEDBACK.SEND_FEEDBACK, {feedback:feedback});
+        return response.data;
+    } catch (error) {
+        // console.error("Error Sending feedback.", error);
+        // throw new Error("Error Sending Feedback.");
+        return error;
     }
 }

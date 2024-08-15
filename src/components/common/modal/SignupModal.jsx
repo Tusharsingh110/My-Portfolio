@@ -3,12 +3,14 @@ import Modal from "./Modal";
 import Loader from "../../hoc/Loader";
 import { signUp } from "../../../services/api.service";
 import { validMail } from "../../../utils/validation.utils";
+import { useToast } from "../../../hooks/useToast";
 
 const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
   const emptyCredentials = { email: "", username: "", password: "" };
   const [credentials, setCredentails] = useState(emptyCredentials);
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,30 +21,45 @@ const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
     const { username, email, password } = credentials;
     let valid = true;
     console.log(username, email, password);
-    if(username.trim().length === 0 || email.trim().length === 0 || password.trim().length === 0) {setErrors(prevState => [...prevState, "All fields are required"]); valid = false;}
-    if(!validMail(email)) { setErrors(prevState => [...prevState, "Enter a valid E-mail address."]); valid = false;}
-    if(password.trim().length < 8 && password.trim().length > 0) {setErrors(prevState => [...prevState, "Password must be atleast 8 characters long."]); valid = false;}
-
+    if (
+      username.trim().length === 0 ||
+      email.trim().length === 0 ||
+      password.trim().length === 0
+    ) {
+      setErrors((prevState) => [...prevState, "All fields are required"]);
+      valid = false;
+    }
+    if (email.trim().length && !validMail(email)) {
+      setErrors((prevState) => [...prevState, "Enter a valid E-mail address."]);
+      valid = false;
+    }
+    if (password.trim().length < 8 && password.trim().length > 0) {
+      setErrors((prevState) => [
+        ...prevState,
+        "Password must be atleast 8 characters long.",
+      ]);
+      valid = false;
+    }
     return valid;
-  }
+  };
 
   const handleSignup = async () => {
     try {
       setLoading(true);
       setErrors([]);
       const formValid = validateForm();
-      if(!formValid) {return;}
+      if (!formValid) {
+        return;
+      }
       const response = await signUp(credentials);
+      toast('success',response.message);
       setShowSignupModal(false);
     } catch (error) {
-      console.log(error);
-      setErrors(prevState =>  [...prevState, error.message]);
+      toast('error',error.message);
     } finally {
       setLoading(false);
     }
   };
-
-  console.log(errors)
 
   return (
     <Modal
@@ -95,16 +112,11 @@ const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
             onChange={handleChange}
           />
         </div>
-        {
-          errors && errors.length > 0 &&
-          <ul>
-            {errors.map((error) => {
-              <li>
-                {error}
-              </li>
-            })}
-            </ul>
-        }
+        {errors &&
+        <ul className="absolute bottom-5 m-2"> 
+          {errors.map((errorMsg, index) => <li className="text-red-600 text-xs" key={index}>{errorMsg}</li>)}
+        </ul>
+          }
       </div>
     </Modal>
   );

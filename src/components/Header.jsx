@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LoginModal from "./common/modal/LoginModal";
-import { useSelector } from "react-redux";
 import LogoutModal from "./common/modal/LogoutModal";
 import SignupModal from "./common/modal/SignupModal";
 

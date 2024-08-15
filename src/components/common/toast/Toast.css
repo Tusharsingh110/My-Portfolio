@@ -1,0 +1,22 @@
+.success {
+    color: green;
+    border: 1px solid green;
+}
+
+.error {
+    color: red;
+    border: 1px solid red;
+
+}
+
+.warning {
+    color: rgb(204, 204, 72);
+    border: 1px solid rgb(204, 204, 72);
+
+}
+
+.info {
+    color: blue;
+    border: 1px solid blue;
+
+}

@@ -1,0 +1,28 @@
+/* ToastContainer.css */
+.toast-item {
+    transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+.toast-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.toast-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.toast-container {
+    z-index: 1500;
+  }

@@ -4,6 +4,7 @@ import Modal from "./Modal";
 import Loader from "../../hoc/Loader";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../../features/user/user.slice";
+import { useToast } from "../../../hooks/useToast";
 
 const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
   // const state = useSelector(state);
@@ -11,6 +12,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
   const [loading, setLoading] = useState(false);
   const emptyCredentials = { email: "", password: "" };
   const [credentails, setCredentails] = useState(emptyCredentials);
+  const toast = useToast();
 
   const dispatch = useDispatch();
   const handleChange = (e) => {
@@ -27,6 +29,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
       localStorage.setItem('token', response.token);
       localStorage.setItem('usermail', response.usermail);
       setShowLoginModal(false);
+      toast('success','Logged in Successfully.');
     } catch (error) {
       console.log(error)
       setError(error.message);

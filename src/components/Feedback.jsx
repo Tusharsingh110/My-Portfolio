@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FeedbackCards from "./FeedbackCards";
-import { fetchFeedbacks } from "../services/api.service";
+import { fetchFeedbacks, sendFeedback } from "../services/api.service";
+import ToastContainer from "../components/common/toast/ToastContainer";
+import { useToast } from "../hooks/useToast";
 
 const responsive = {
   superLargeDesktop: {
@@ -25,84 +27,51 @@ const responsive = {
 
 const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
-  
-
-
-  useEffect(() => {
-    const getFeedbacks = async () => {
-      try {
-        const response = await fetchFeedbacks();
-        setFeedbackData(response.data.data); 
-      } catch (error) {
-        console.log("ERROR:", error);
-      }
-    };
-
-    getFeedbacks();
-  }, []);
-
-  const [feedback, setFeedback] = useState({
+  const toast = useToast();
+  const defaultFeedback = {
     username: "",
     email: "",
     type: "",
     collab: false,
     message: "",
-  });
+  };
+
+  useEffect(() => {
+    const getFeedbacks = async () => {
+      try {
+        const response = await fetchFeedbacks();
+        setFeedbackData(response.data.data);
+      } catch (error) {
+        console.log("ERROR:", error);
+      }
+    };
+    getFeedbacks();
+  }, []);
+
+  const [feedback, setFeedback] = useState(defaultFeedback);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // You can access the feedback data here and perform further actions
-    // For now, let's just log the feedback object
-    // console.log(feedback);
-
-    const { username, email, type, collab, message } = feedback;
-
-    const res = await fetch("https://tsportfolio-backend.vercel.app/api/createFeedback", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        type,
-        collab,
-        message,
-      }),
-    });
-    const data = await res.json();
-
-    if (res.status === 400 || !data) {
-      console.log(res);
-      window.alert("Email already Exists!! ");
-      console.log("Email already Exists!! ");
-    } else {
-      window.alert("Feedback sent!!");
-      console.log("Feedback sent!!");
+    try {
+      const response = await sendFeedback(feedback);
+      console.log(response);
+      toast({ type: "success", message: "Feedback sent successfully." });
+    } catch (error) {
+      toast("error",error?.message);
+    } finally {
+      setFeedback(defaultFeedback);
     }
-    // Reset the form
-    setFeedback({
-      username: "",
-      email: "",
-      type: "",
-      collab: false,
-      message: "",
-    });
   };
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
-
-    // For checkbox inputs, use checked value directly
     const newValue = type === "checkbox" ? checked : value;
-
     setFeedback((prevFeedback) => ({
       ...prevFeedback,
       [name]: newValue,
     }));
   };
 
-  // console.log(feedbackData)
   const feedData = feedbackData.map((curfeed) => {
     return <FeedbackCards key={curfeed._id} {...curfeed} />;
   });
@@ -124,7 +93,12 @@ const Feedback = () => {
               transitionDuration={500}
               infinite={true}
               showDots={true}
-              removeArrowOnDeviceType={["tablet", "mobile", "desktop", "superLargeDesktop"]}
+              removeArrowOnDeviceType={[
+                "tablet",
+                "mobile",
+                "desktop",
+                "superLargeDesktop",
+              ]}
             >
               {feedData}
             </Carousel>
@@ -223,6 +197,7 @@ const Feedback = () => {
           </div>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
