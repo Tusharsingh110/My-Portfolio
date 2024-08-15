@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.17265a15.css",
-    "main.js": "/My-Portfolio/static/js/main.f42fb928.js",
+    "main.js": "/My-Portfolio/static/js/main.9d684333.js",
     "static/media/promptexai.png": "/My-Portfolio/static/media/promptexai.b9b3a0b6a44c67ac8a9c.png",
     "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
     "static/media/Resume.pdf": "/My-Portfolio/static/media/Resume.e22cdd93379b2360c222.pdf",
@@ -10,6 +10,7 @@
     "static/media/rb.png": "/My-Portfolio/static/media/rb.42dad5b4e25e355be426.png",
     "static/media/pathfinder.png": "/My-Portfolio/static/media/pathfinder.895c1ff872110f14e56b.png",
     "static/media/gridpathfinder.png": "/My-Portfolio/static/media/gridpathfinder.76e1a071a2bc095d2b60.png",
+    "static/media/TS-Healthcare.jpeg": "/My-Portfolio/static/media/TS-Healthcare.c088ee09fc88a6675ead.jpeg",
     "static/media/black-jack.png": "/My-Portfolio/static/media/black-jack.ab715e42c835a80f1b53.png",
     "static/media/counter.png": "/My-Portfolio/static/media/counter.e1203ba0bb041b271a32.png",
     "static/media/todo.png": "/My-Portfolio/static/media/todo.3b90706521699479452c.png",
@@ -26,10 +27,10 @@
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
     "main.17265a15.css.map": "/My-Portfolio/static/css/main.17265a15.css.map",
-    "main.f42fb928.js.map": "/My-Portfolio/static/js/main.f42fb928.js.map"
+    "main.9d684333.js.map": "/My-Portfolio/static/js/main.9d684333.js.map"
   },
   "entrypoints": [
     "static/css/main.17265a15.css",
-    "static/js/main.f42fb928.js"
+    "static/js/main.9d684333.js"
   ]
 }
