@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import LoginModal from "./common/modal/LoginModal";
 import LogoutModal from "./common/modal/LogoutModal";
 import SignupModal from "./common/modal/SignupModal";
+import { useToast } from "../hooks/useToast";
+import { getUserData } from "../services/api.service";
+import { useDispatch } from "react-redux";
+import { logIn } from "../features/user/user.slice";
 
 export default function Header() {
+  const toast = useToast();
+  const dispatch = useDispatch();
   const token = localStorage.getItem("token");
   const usermail = localStorage.getItem("usermail");
 
@@ -15,7 +21,6 @@ export default function Header() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
-
 
   let themeImg = theme ? "moon.png" : "sun.png";
 
@@ -33,6 +38,20 @@ export default function Header() {
     localStorage.setItem("theme", updatedTheme);
   }, [theme]);
 
+  const fetchUserData = async () => {
+    try {
+      const response = await getUserData();
+      dispatch(logIn({name:response.data.name, mail:response.data.mail, isAdmin:response.data.isAdmin}));
+    } catch (error) {
+      toast("error", error.message);
+    }
+  };
+
+  useEffect(() => {
+    if(token)
+      fetchUserData();
+  }, []);
+
   const menuItems = [
     // { id: 1, title: 'Home' },
     // { id: 2, title: 'About' },
@@ -43,7 +62,6 @@ export default function Header() {
   const handleToggle = () => {
     setToggle(!toggle);
   };
-
 
   return (
     <div className="bg-[#2271ef] shadow-lg dark:bg-[#1d1f23] text-white p-2 z-50 w-full fixed duration-[500ms] h-17">
@@ -102,27 +120,28 @@ export default function Header() {
           </div>
           {[null, undefined, " ", ""].includes(token) ? (
             <div className="flex gap-4">
-            <button
-              className="font-bold"
-              onClick={() => {
-                setShowLoginModal(true);
-              }}
+              <button
+                className="font-bold"
+                onClick={() => {
+                  setShowLoginModal(true);
+                }}
               >
-              Login
-            </button>
-           {!token && <button
-              className="font-bold"
-              onClick={() => {
-                setShowSignupModal(true);
-              }}
-            >
-              Signup
-            </button>}
-            
-              </div>
+                Login
+              </button>
+              {!token && (
+                <button
+                  className="font-bold"
+                  onClick={() => {
+                    setShowSignupModal(true);
+                  }}
+                >
+                  Signup
+                </button>
+              )}
+            </div>
           ) : (
             <div className="flex gap-2">
-              <p>Hi {usermail.split('@')[0] ?? "user"}, Not you?</p>
+              <p>Hi {usermail.split("@")[0] ?? "user"}, Not you?</p>
               <button
                 className="font-bold"
                 onClick={() => {
@@ -149,6 +168,7 @@ export default function Header() {
       <LoginModal
         showLoginModal={showLoginModal}
         setShowLoginModal={setShowLoginModal}
+        fetchUserData={fetchUserData}
       />
       <LogoutModal
         showLogoutModal={showLogoutModal}

@@ -62,12 +62,13 @@
 }
 
 input {
-  border: 2px solid #2271ef5b;
+  border: 1px solid #2271ef5b;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
   gap: 0.5rem;
 }
 
@@ -77,10 +78,25 @@ input {
 }
 
 textarea {
-  border: 2px solid #2271ef5b;
+  border: 1px solid #2271ef5b;
 }
 
 select {
-  border: 2px solid #2271ef5b;
+  border: 1px solid #2271ef5b;
 }
 
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #2271ef; /* Border color when checked */
+  background-color: #2271ef; /* Background color when checked */
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px rgba(34, 113, 239, 0.5); /* Optional: add a focus effect */
+}

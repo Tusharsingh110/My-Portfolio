@@ -2,19 +2,15 @@ import { useState } from "react";
 import { login } from "../../../services/api.service";
 import Modal from "./Modal";
 import Loader from "../../hoc/Loader";
-import { useDispatch } from "react-redux";
-import { logIn } from "../../../features/user/user.slice";
 import { useToast } from "../../../hooks/useToast";
+import { useSelector } from "react-redux";
 
-const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
-  // const state = useSelector(state);
+const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const emptyCredentials = { email: "", password: "" };
   const [credentails, setCredentails] = useState(emptyCredentials);
   const toast = useToast();
-
-  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentails((prevState) => ({ ...prevState, [name]: value }));
@@ -25,9 +21,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
       setLoading(true);
       setError("");
       const response = await login(credentails);
-      dispatch(logIn(response.usermail));
       localStorage.setItem('token', response.token);
-      localStorage.setItem('usermail', response.usermail);
       setShowLoginModal(false);
       toast('success','Logged in Successfully.');
     } catch (error) {
@@ -35,6 +29,9 @@ const LoginModal = ({ showLoginModal, setShowLoginModal }) => {
       setError(error.message);
     } finally {
       setLoading(false);
+      const token = localStorage.getItem('token');
+      if(token)
+      fetchUserData();
     }
   };
 

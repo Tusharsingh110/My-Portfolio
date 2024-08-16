@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
-import Loader from "../../hoc/Loader";
 import { signUp } from "../../../services/api.service";
 import { validMail } from "../../../utils/validation.utils";
 import { useToast } from "../../../hooks/useToast";

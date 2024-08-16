@@ -6,6 +6,11 @@ export const ROUTES = {
     },
     USER: {
         LOGIN: '/user/login',
-        SIGN_UP: '/user/signup'
+        SIGN_UP: '/user/signup',
+        GET_USER_DETAILS: '/user/get-user'
+    }, 
+    RESUME: {
+        UPLOAD_RESUME: '/resume/save-resume',
+        GET_RESUME_VERSIONS: '/resume/get-versions'
     }
 }
