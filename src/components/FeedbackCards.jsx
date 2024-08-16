@@ -1,7 +1,6 @@
 import React from "react";
 
 const FeedbackCards = (props) => {
-  // console.log(props);
   return (
     <>
       <div className="bg-[#fffdfd] dark:bg-[#33373f] h-[300px] w-[300px] mx-auto shadow hover:shadow-md duration-[100ms] rounded-xl">

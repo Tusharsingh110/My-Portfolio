@@ -54,7 +54,6 @@ const Feedback = () => {
     event.preventDefault();
     try {
       const response = await sendFeedback(feedback);
-      console.log(response);
       toast({ type: "success", message: "Feedback sent successfully." });
     } catch (error) {
       toast("error",error?.message);

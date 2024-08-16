@@ -30,9 +30,7 @@ export default function Resume() {
   const handleFileUpload = async (payload) => {
     try {
       // const {majorVersion, file, description} = payload;
-      console.log(payload)
       const response = await uploadResume(payload);
-      console.log(response);
     } catch (error) {
       toast('error', error.message);
     } finally {

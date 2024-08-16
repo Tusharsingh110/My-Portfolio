@@ -19,7 +19,6 @@ const SignupModal = ({ showSignupModal, setShowSignupModal }) => {
   const validateForm = () => {
     const { username, email, password } = credentials;
     let valid = true;
-    console.log(username, email, password);
     if (
       username.trim().length === 0 ||
       email.trim().length === 0 ||
