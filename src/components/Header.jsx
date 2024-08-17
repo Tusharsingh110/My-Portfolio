@@ -4,14 +4,15 @@ import LogoutModal from "./common/modal/LogoutModal";
 import SignupModal from "./common/modal/SignupModal";
 import { useToast } from "../hooks/useToast";
 import { getUserData } from "../services/api.service";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../features/user/user.slice";
 
 export default function Header() {
   const toast = useToast();
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
-  const usermail = localStorage.getItem("usermail");
+  // const usermail = localStorage.getItem("usermail");
+  const {usermail} = useSelector(state => state.auth);
 
   let localTheme = localStorage.getItem("theme")
     ? JSON.parse(localStorage.getItem("theme"))
@@ -141,7 +142,7 @@ export default function Header() {
             </div>
           ) : (
             <div className="flex gap-2">
-              <p>Hi {usermail.split("@")[0] ?? "user"}, Not you?</p>
+              <p>Hi {usermail?.split("@")[0] ?? "user"}, Not you?</p>
               <button
                 className="font-bold"
                 onClick={() => {
