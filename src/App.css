@@ -100,3 +100,8 @@ input[type="checkbox"]:focus {
   outline: none;
   box-shadow: 0 0 2px 1px rgba(34, 113, 239, 0.5); /* Optional: add a focus effect */
 }
+
+/* :where(.css-dev-only-do-not-override-1c0na6j).ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: #2271ef; 
+  border: none;
+} */

@@ -2,28 +2,53 @@ import React, { useEffect, useState, version } from "react";
 import { ReactComponent as Leetcode } from "../assets/images/leetcode.svg";
 import { ReactComponent as Github } from "../assets/images/github.svg";
 import { ReactComponent as Linkedin } from "../assets/images/linkedin.svg";
-import resume from "../assets/Resume.pdf";
 import { useSelector } from "react-redux";
 import { Button } from "antd";
 import UploadFileModal from "./common/modal/UploadFileModal";
 import { useToast } from "../hooks/useToast";
-import { uploadResume, getResumeVersions } from "../services/api.service";
+import { uploadResume, getResumeVersions, getResumeWithVersion } from "../services/api.service";
+import SingleSelect from "./common/select/SingleSelect";
+import { DownloadOutlined } from "@ant-design/icons";
+import { downloadPDFBase64, getResumeOptions } from "../utils/resume.utils";
 
 export default function Resume() {
+  const toast = useToast();
   const [resumeVersions, setResumeVersions] = useState([]);
+  const [selectedVersion, setSelectedVersion] = useState('');
+  const resumeOptions = getResumeOptions(resumeVersions);
+
+  const handleVersionSelect = (selectedOption) => {
+    setSelectedVersion(selectedOption);
+  }
+
   const fetchResumeVersions = async () => {
     try {
       const response = await getResumeVersions();
       setResumeVersions(response.data);
     } catch (error) {
+      toast("error", error.message);
+    }
+  };
+
+  const downloadResume = async () => {
+    try {
+      console.log(selectedVersion)
+      if(['',' ', null, undefined].includes(selectedVersion)) {
+        toast('warning', "Select a version to download.");
+        return;
+      } 
+      const response = await getResumeWithVersion(selectedVersion);
+      downloadPDFBase64(response?.data?.file, `Tushar_Resume_v${response?.data?.version ?? 0}.pdf`);
+      toast('success', `Resume downloaded successfully`)
+    } catch (error) {
       toast('error', error.message);
     }
   }
-  useEffect(()=> {
-    fetchResumeVersions();
-  },[])
 
-  const toast = useToast();
+  useEffect(() => {
+    fetchResumeVersions();
+  }, []);
+
   const state = useSelector((state) => state.auth);
   const [showFileUploadModal, setShowFileUploadModal] = useState(false);
 
@@ -32,11 +57,11 @@ export default function Resume() {
       // const {majorVersion, file, description} = payload;
       const response = await uploadResume(payload);
     } catch (error) {
-      toast('error', error.message);
+      toast("error", error.message);
     } finally {
       fetchResumeVersions();
     }
-  }
+  };
   const { isLoggedIn, isAdmin } = state;
   return (
     <div className="py-8 dark:bg-[#1d1f23] dark:text-white duration-[150ms]">
@@ -515,7 +540,7 @@ export default function Resume() {
             {isLoggedIn && isAdmin === "T" ? (
               <>
                 <Button
-                  className="p-3 text-md h-12 min-w-32 rounded-lg drop-shadow-md dark:bg-[#464b55] text-[#2271ef]  border hover:border border-[#2271ef] duration-[100ms]"
+                  className="p-2 text-md h-12 w-28 rounded-lg drop-shadow-md dark:bg-[#464b55] text-[#2271ef]  border hover:border border-[#2271ef] duration-[100ms]"
                   onClick={() => setShowFileUploadModal(true)}
                 >
                   Upload
@@ -525,19 +550,39 @@ export default function Resume() {
                   setShowFileUploadModal={setShowFileUploadModal}
                   title="Upload Resume"
                   handleFileUpload={handleFileUpload}
-                  resumeVersions = {resumeVersions}
+                  resumeVersions={resumeVersions}
                 />
               </>
             ) : (
               <></>
             )}
-            <Button
+            {/* <Button
               href={resume}
               className="p-3 text-md h-12 w-30 rounded-lg drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] text-white  hover:bg-white hover:text-[#2271ef] border hover:border border-[#2271ef] duration-[100ms]"
               download="Tushar-Resume"
-            >
-              Download Resume
-            </Button>
+            > */}
+            <div className="flex items-center">
+              <SingleSelect
+                suffixIcon={null}
+                bordered={false}
+                onChange={handleVersionSelect}
+                options={resumeOptions}
+                classname={
+                  "h-12 w-24 border border-[#2271ef] border-r-0 rounded-r-none rounded-l-lg "
+                }
+                placeholder={
+                  <div className="text-[#2271ef] pl-1.5">Download</div>
+                }
+              >
+              </SingleSelect>
+              <Button
+                className="p-2 border border-[#2271ef] rounded-l-none rounded-r-lg h-12"
+                onClick={downloadResume}
+              >
+                <DownloadOutlined className={"text-[#2271ef]"} />
+              </Button>
+            </div>
+            {/* </Button> */}
           </div>
         </div>
       </div>
