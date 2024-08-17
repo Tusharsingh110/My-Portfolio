@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.7ee52a47.css",
-    "main.js": "/My-Portfolio/static/js/main.69828da4.js",
+    "main.js": "/My-Portfolio/static/js/main.7216a11a.js",
     "static/media/promptexai.png": "/My-Portfolio/static/media/promptexai.b9b3a0b6a44c67ac8a9c.png",
     "static/media/me.jpeg": "/My-Portfolio/static/media/me.7c2dc34fcc620b5cefce.jpeg",
     "static/media/linkedin.svg": "/My-Portfolio/static/media/linkedin.31a6082e58800b9e51053f0fc17e7231.svg",
@@ -26,10 +26,10 @@
     "static/media/github.svg": "/My-Portfolio/static/media/github.0c95fa06448241aca43a40c6042da588.svg",
     "index.html": "/My-Portfolio/index.html",
     "main.7ee52a47.css.map": "/My-Portfolio/static/css/main.7ee52a47.css.map",
-    "main.69828da4.js.map": "/My-Portfolio/static/js/main.69828da4.js.map"
+    "main.7216a11a.js.map": "/My-Portfolio/static/js/main.7216a11a.js.map"
   },
   "entrypoints": [
     "static/css/main.7ee52a47.css",
-    "static/js/main.69828da4.js"
+    "static/js/main.7216a11a.js"
   ]
 }
