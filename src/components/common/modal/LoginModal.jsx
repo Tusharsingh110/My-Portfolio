@@ -9,29 +9,30 @@ const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const emptyCredentials = { email: "", password: "" };
-  const [credentails, setCredentails] = useState(emptyCredentials);
+  const [credentials, setCredentials] = useState(emptyCredentials);
   const toast = useToast();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCredentails((prevState) => ({ ...prevState, [name]: value }));
+    setCredentials((prevState) => ({ ...prevState, [name]: value }));
   };
  
   const handleLogin = async () => {
     try {
       setLoading(true);
       setError("");
-      const response = await login(credentails);
+      const response = await login(credentials);
       localStorage.setItem('token', response.token);
       setShowLoginModal(false);
       toast('success','Logged in Successfully.');
+      const token = localStorage.getItem('token');
+      if(token) {
+      fetchUserData();
+      }
     } catch (error) {
       console.log(error)
       setError(error.message);
     } finally {
       setLoading(false);
-      const token = localStorage.getItem('token');
-      if(token)
-      fetchUserData();
     }
   };
 
@@ -47,7 +48,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
       onOk={handleLogin}
       onCancel={() => {
         setError("");
-        setCredentails(emptyCredentials);
+        setCredentials(emptyCredentials);
       }}
     >
       <div className="flex flex-col gap-4">
@@ -55,7 +56,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
           <label htmlFor="email">E-mail</label>
           <input
             type="email"
-            value={credentails.email}
+            value={credentials.email}
             className="p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
             name="email"
             onChange={handleChange}
@@ -66,7 +67,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            value={credentails.password}
+            value={credentials.password}
             className="p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
             name="password"
             onChange={handleChange}
