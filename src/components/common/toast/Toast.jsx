@@ -10,12 +10,12 @@ const Toast = ({ id, type, message, onClose = () => {} }) => {
   return (
     <div
       className={cn(
-        `flex w-80 p-3 items-start justify-between gap-2 rounded-md border shadow-boxShadow`,
+        `flex w-40 p-2 text-xs items-start justify-between gap-1 rounded-md border shadow-boxShadow relative opacity-60`,
         toastStyle
       )}
     >
       <div>
-        <h5 className="font-bold">{toTitleCase(type)}</h5>
+        <h5 className="font-semibold">{toTitleCase(type)}</h5>
         <p>{message}</p>
       </div>
       <button
@@ -25,7 +25,7 @@ const Toast = ({ id, type, message, onClose = () => {} }) => {
         aria-label="Close notification"
         className="text-lg"
       >
-        <IoClose />
+        <IoClose className="absolute top-1 right-1" style={{width:"12px", height:"12px"}} />
       </button>
     </div>
   );

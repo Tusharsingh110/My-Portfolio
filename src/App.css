@@ -105,3 +105,9 @@ input[type="checkbox"]:focus {
   background-color: #2271ef; 
   border: none;
 } */
+
+/* Ensure scrollbar remains visible when modal is opened */
+body.ant-scrolling-effect {
+  overflow: visible !important;
+  padding-right: 0 !important;
+}

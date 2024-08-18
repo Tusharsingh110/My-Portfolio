@@ -13,6 +13,7 @@ const Modal = ({ isModalOpen, onOk, onCancel, setIsModalOpen, title, children,  
   return (
     <>
       <AntdModal
+        getContainer={false}
         title={title ?? "Title"}
         open={isModalOpen}
         onOk={handleOk}

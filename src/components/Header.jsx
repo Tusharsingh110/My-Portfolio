@@ -5,14 +5,15 @@ import SignupModal from "./common/modal/SignupModal";
 import { useToast } from "../hooks/useToast";
 import { getUserData } from "../services/api.service";
 import { useDispatch, useSelector } from "react-redux";
-import { logIn } from "../features/user/user.slice";
+import { logIn, logOut } from "../features/user/user.slice";
 
 export default function Header() {
+  const {isLoggedIn} = useSelector(state => state.auth);
   const toast = useToast();
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
   // const usermail = localStorage.getItem("usermail");
-  const {usermail} = useSelector(state => state.auth);
+  const { usermail } = useSelector((state) => state.auth);
 
   let localTheme = localStorage.getItem("theme")
     ? JSON.parse(localStorage.getItem("theme"))
@@ -42,15 +43,21 @@ export default function Header() {
   const fetchUserData = async () => {
     try {
       const response = await getUserData();
-      dispatch(logIn({name:response.data.name, mail:response.data.mail, isAdmin:response.data.isAdmin}));
+      dispatch(
+        logIn({
+          name: response.data.name,
+          mail: response.data.mail,
+          isAdmin: response.data.isAdmin,
+        })
+      );
     } catch (error) {
+      dispatch(logOut());
       toast("error", error.message);
     }
   };
 
   useEffect(() => {
-    if(token)
-      fetchUserData();
+    if (token) fetchUserData();
   }, []);
 
   const menuItems = [
@@ -119,28 +126,7 @@ export default function Header() {
               />{" "}
             </button>
           </div>
-          {[null, undefined, " ", ""].includes(token) ? (
-            <div className="flex gap-4">
-              <button
-                className="font-bold"
-                onClick={() => {
-                  setShowLoginModal(true);
-                }}
-              >
-                Login
-              </button>
-              {!token && (
-                <button
-                  className="font-bold"
-                  onClick={() => {
-                    setShowSignupModal(true);
-                  }}
-                >
-                  Signup
-                </button>
-              )}
-            </div>
-          ) : (
+          {isLoggedIn ? (
             <div className="flex gap-2">
               <p>Hi {usermail?.split("@")[0] ?? "user"}, Not you?</p>
               <button
@@ -150,6 +136,25 @@ export default function Header() {
                 }}
               >
                 Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-4">
+              <button
+                className="font-bold"
+                onClick={() => {
+                  setShowLoginModal(true);
+                }}
+              >
+                Login
+              </button>
+              <button
+                className="font-bold"
+                onClick={() => {
+                  setShowSignupModal(true);
+                }}
+              >
+                Signup
               </button>
             </div>
           )}

@@ -16,6 +16,7 @@ const LogoutModal = ({ showLogoutModal, setShowLogoutModal }) => {
   };
   return (
     <Modal
+      width={"350px"}
       isModalOpen={showLogoutModal}
       setIsModalOpen={setShowLogoutModal}
       title={"Logout"}
