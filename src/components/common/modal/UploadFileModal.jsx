@@ -34,7 +34,7 @@ const UploadFileModal = ({
       return;
     }
     let latestVersion = getVersion(resumeVersions.map(resume => resume.version));
-    const version = isMajorVersion ? Math.ceil(latestVersion) : latestVersion + 0.1;
+    const version = isMajorVersion ? Math.floor(latestVersion) + 1 : latestVersion + 0.1;
 
     // Create FormData object
     const formData = new FormData();
