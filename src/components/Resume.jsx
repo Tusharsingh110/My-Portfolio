@@ -56,6 +56,7 @@ export default function Resume() {
     try {
       // const {majorVersion, file, description} = payload;
       const response = await uploadResume(payload);
+      toast("success", response.message)
     } catch (error) {
       toast("error", error.message);
     } finally {
