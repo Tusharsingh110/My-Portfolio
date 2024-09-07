@@ -52,7 +52,7 @@ export default function Header() {
       );
     } catch (error) {
       dispatch(logOut());
-      toast("error", error.message);
+      // toast("error", error.message);
     }
   };
 
