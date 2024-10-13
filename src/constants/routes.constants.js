@@ -7,7 +7,9 @@ export const ROUTES = {
     USER: {
         LOGIN: '/user/login',
         SIGN_UP: '/user/signup',
-        GET_USER_DETAILS: '/user/get-user'
+        GET_USER_DETAILS: '/user/get-user',
+        VERIFY_USER: '/user/verify-otp',
+        OTP_REQUEST: '/user/request-otp'
     }, 
     RESUME: {
         UPLOAD_RESUME: '/resume/save-resume',

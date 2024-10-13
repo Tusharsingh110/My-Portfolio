@@ -1,18 +1,10 @@
-/* HTML: <div class="loader"></div> */
+
 .loader {
-  height: 20px;
-  width: 20px;
-  padding: 2px;
+  width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #ffffff;
-  --_m: 
-    conic-gradient(#0000 40%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
 }
-@keyframes l3 {to{transform: rotate(1turn)}}
+@keyframes l1 {to{transform: rotate(.5turn)}}

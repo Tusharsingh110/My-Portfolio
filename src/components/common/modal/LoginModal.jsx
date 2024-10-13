@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { login } from "../../../services/api.service";
 import Modal from "./Modal";
-import Loader from "../../hoc/Loader";
 import { useToast } from "../../../hooks/useToast";
 import { useSelector } from "react-redux";
+import { login } from "../../../services/api.service";
 
 const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
   const [error, setError] = useState("");
@@ -32,7 +31,7 @@ const LoginModal = ({ showLoginModal, setShowLoginModal, fetchUserData }) => {
       console.log(error)
       setError(error.message);
     } finally {
-      setLoading(false);
+      setTimeout(()=>{setLoading(false);},1000)
     }
   };
 

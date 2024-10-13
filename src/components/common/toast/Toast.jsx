@@ -5,7 +5,7 @@ import { getToastStyle } from "../../../utils/toast.utils";
 import "./Toast.css";
 import { cn } from "../../../utils/cn.utils";
 
-const Toast = ({ id, type, message, onClose = () => {} }) => {
+const Toast = ({ id, type = "success", message = "message", onClose = () => {} }) => {
   const toastStyle = getToastStyle(type);
   return (
     <div

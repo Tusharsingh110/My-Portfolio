@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Button } from "antd";
 import UploadFileModal from "./common/modal/UploadFileModal";
 import { useToast } from "../hooks/useToast";
-import { uploadResume, getResumeVersions, getResumeWithVersion } from "../services/api.service";
+import { getResumeVersions, getResumeWithVersion} from "../services/api.service";
 import SingleSelect from "./common/select/SingleSelect";
 import { DownloadOutlined } from "@ant-design/icons";
 import { downloadPDFBase64, getResumeOptions } from "../utils/resume.utils";
@@ -14,12 +14,12 @@ import { downloadPDFBase64, getResumeOptions } from "../utils/resume.utils";
 export default function Resume() {
   const toast = useToast();
   const [resumeVersions, setResumeVersions] = useState([]);
-  const [selectedVersion, setSelectedVersion] = useState('');
+  const [selectedVersion, setSelectedVersion] = useState("");
   const resumeOptions = getResumeOptions(resumeVersions);
 
   const handleVersionSelect = (selectedOption) => {
     setSelectedVersion(selectedOption);
-  }
+  };
 
   const fetchResumeVersions = async () => {
     try {
@@ -32,18 +32,21 @@ export default function Resume() {
 
   const downloadResume = async () => {
     try {
-      console.log(selectedVersion)
-      if(['',' ', null, undefined].includes(selectedVersion)) {
-        toast('warning', "Select a version to download.");
+      console.log(selectedVersion);
+      if (["", " ", null, undefined].includes(selectedVersion)) {
+        toast("warning", "Select a version to download.");
         return;
-      } 
+      }
       const response = await getResumeWithVersion(selectedVersion);
-      downloadPDFBase64(response?.data?.file, `Tushar_Resume_v${response?.data?.version ?? 0}.pdf`);
-      toast('success', `Resume downloaded successfully`)
+      downloadPDFBase64(
+        response?.data?.file,
+        `Tushar_Resume_v${response?.data?.version ?? 0}.pdf`
+      );
+      toast("success", `Resume downloaded successfully`);
     } catch (error) {
-      toast('error', error.message);
+      toast("error", error.message);
     }
-  }
+  };
 
   useEffect(() => {
     fetchResumeVersions();
@@ -56,7 +59,7 @@ export default function Resume() {
     try {
       // const {majorVersion, file, description} = payload;
       const response = await uploadResume(payload);
-      toast("success", response.message)
+      toast("success", response.message);
     } catch (error) {
       toast("error", error.message);
     } finally {
@@ -574,8 +577,7 @@ export default function Resume() {
                 placeholder={
                   <div className="text-[#2271ef] pl-1.5">Download</div>
                 }
-              >
-              </SingleSelect>
+              ></SingleSelect>
               <Button
                 className="p-2 border border-[#2271ef] rounded-l-none rounded-r-lg h-12"
                 onClick={downloadResume}

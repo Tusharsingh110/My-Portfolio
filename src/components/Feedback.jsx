@@ -3,7 +3,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FeedbackCards from "./FeedbackCards";
 import { fetchFeedbacks, sendFeedback } from "../services/api.service";
-import ToastContainer from "../components/common/toast/ToastContainer";
 import { useToast } from "../hooks/useToast";
 
 const responsive = {
@@ -54,7 +53,7 @@ const Feedback = () => {
     event.preventDefault();
     try {
       const response = await sendFeedback(feedback);
-      toast({ type: "success", message: "Feedback sent successfully." });
+      toast("success","Feedback sent successfully.");
     } catch (error) {
       toast("error",error?.message);
     } finally {
@@ -196,7 +195,6 @@ const Feedback = () => {
           </div>
         </form>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };

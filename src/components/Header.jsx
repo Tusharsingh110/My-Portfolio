@@ -13,7 +13,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
   // const usermail = localStorage.getItem("usermail");
-  const { usermail } = useSelector((state) => state.auth);
+  const { isVerified, username } = useSelector((state) => state.auth);
 
   let localTheme = localStorage.getItem("theme")
     ? JSON.parse(localStorage.getItem("theme"))
@@ -43,15 +43,18 @@ export default function Header() {
   const fetchUserData = async () => {
     try {
       const response = await getUserData();
+      const userData = response.data;
       dispatch(
         logIn({
-          name: response.data.name,
-          mail: response.data.mail,
-          isAdmin: response.data.isAdmin,
+          username: userData.username,
+          mail: userData.mail,
+          isAdmin: userData.isAdmin,
+          isVerified: userData.isVerified, 
         })
       );
     } catch (error) {
       dispatch(logOut());
+      // localStorage.removeItem('token');
       // toast("error", error.message);
     }
   };
@@ -128,7 +131,16 @@ export default function Header() {
           </div>
           {isLoggedIn ? (
             <div className="flex gap-2">
-              <p>Hi {usermail?.split("@")[0] ?? "user"}, Not you?</p>
+              {/* <p>Hi {usermail?.split("@")[0] ?? "user"}, Not you?</p> */}
+              <p>Hi, {username}</p>
+              {isVerified == false && <button
+                className="text-sm font-light mt-[0.5] -ml-1"
+                onClick={() => {
+                  setShowSignupModal(true);
+                }}
+              >
+                <u>(Verify)</u>
+              </button>}
               <button
                 className="font-bold"
                 onClick={() => {
@@ -137,6 +149,7 @@ export default function Header() {
               >
                 Logout
               </button>
+             
             </div>
           ) : (
             <div className="flex gap-4">
@@ -154,7 +167,7 @@ export default function Header() {
                   setShowSignupModal(true);
                 }}
               >
-                Signup
+                {'Signup'}
               </button>
             </div>
           )}
@@ -183,6 +196,10 @@ export default function Header() {
       <SignupModal
         showSignupModal={showSignupModal}
         setShowSignupModal={setShowSignupModal}
+        title={isVerified == false ? 'Enter OTP' : 'Signup'  }
+        okText={isVerified == false ? 'Submit' : 'Signup'}
+        cancelText={isVerified == false ? 'Later' : 'Cancel'}
+        fetchUserData={fetchUserData}
       />
     </div>
   );

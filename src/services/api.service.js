@@ -36,7 +36,7 @@ export const signUp = async (payload) => {
 
 export const sendFeedback = async (feedback) => {
     try {
-        const response = await axiosInstance.post(ROUTES.FEEDBACK.SEND_FEEDBACK, {feedback:feedback});
+        const response = await axiosInstance.post(ROUTES.FEEDBACK.SEND_FEEDBACK, { feedback: feedback });
         return response.data;
     } catch (error) {
         throw (error.response.data)
@@ -46,7 +46,8 @@ export const sendFeedback = async (feedback) => {
 export const getUserData = async () => {
     try {
         const token = localStorage.getItem('token');
-        const response = await axiosInstance.get(ROUTES.USER.GET_USER_DETAILS, {headers:{Authorization: `Bearer ${token}`}})
+
+        const response = await axiosInstance.get(ROUTES.USER.GET_USER_DETAILS, { headers: { 'Authorization': `Bearer ${token}` } })
         return response.data;
     } catch (error) {
         throw (error.response.data);
@@ -56,7 +57,7 @@ export const getUserData = async () => {
 export const uploadResume = async (file) => {
     try {
         const token = localStorage.getItem('token');
-        const response = await axiosInstance.post(ROUTES.RESUME.UPLOAD_RESUME,file, {headers:{Authorization:`Bearer ${token}`}});
+        const response = await axiosInstance.post(ROUTES.RESUME.UPLOAD_RESUME, file, { headers: { 'Authorization': `Bearer ${token}` } });
         return response.data;
     } catch (error) {
         throw (error.response.data);
@@ -80,3 +81,24 @@ export const getResumeWithVersion = async (version) => {
         throw (error.response.data);
     }
 }
+
+export const verifyUser = async (otp) => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axiosInstance.post(ROUTES.USER.VERIFY_USER, otp, { headers: { 'Authorization': `Bearer ${token}` } });
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}
+
+export const sendOTPRequest = async () => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axiosInstance.post(ROUTES.USER.OTP_REQUEST, {}, { headers: { 'Authorization': `Bearer ${token}` } });
+        console.log(response.data)
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}    

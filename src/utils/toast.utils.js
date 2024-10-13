@@ -1,5 +1,5 @@
 export const getToastStyle = (type) => {
-    type = type.toLowerCase();
+    type = type.toString().toLowerCase();
     switch (type) {
         case 'success':
             return 'bg-success-100 border border-success-500 text-success-700';
