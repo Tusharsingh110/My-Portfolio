@@ -1,0 +1,16 @@
+.section {
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
+    min-width: 6rem;
+    min-height: 2rem;
+}
