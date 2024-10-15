@@ -14,7 +14,7 @@ const ToastContainer = () => {
   // };
 
   return (
-    <div className="fixed top-1 right-1 w-auto max-w-xl toast-container flex flex-col gap-1">
+    <div className="fixed top-2 right-2 w-auto max-w-xl toast-container flex flex-col gap-1">
       {toasts.map((toast, index) => (
         <Toast
           key={toast.id}

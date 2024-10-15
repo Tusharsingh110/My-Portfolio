@@ -35,7 +35,7 @@ const Toast = ({
   return (
     <div
       className={cn(
-        `bg-slate-800 flex min-w-[fit-content] gap-2 p-4 py-2 items-center justify-between font-semibold rounded-3xl text-xs transition-transform duration-500 ease-in-out`,
+        `bg-slate-800 flex min-w-full gap-2 p-4 py-2 items-center justify-between font-semibold rounded-3xl text-xs transition-transform duration-500 ease-in-out antialiased`,
         toastStyle,
         isVisible ? "translate-x-0" : "translate-x-full"
       )}
