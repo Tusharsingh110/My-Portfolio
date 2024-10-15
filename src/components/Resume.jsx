@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Button } from "antd";
 import UploadFileModal from "./common/modal/UploadFileModal";
 import { useToast } from "../hooks/useToast";
-import { getResumeVersions, getResumeWithVersion} from "../services/api.service";
+import { getResumeVersions, getResumeWithVersion, uploadResume} from "../services/api.service";
 import SingleSelect from "./common/select/SingleSelect";
 import { DownloadOutlined } from "@ant-design/icons";
 import { downloadPDFBase64, getResumeOptions } from "../utils/resume.utils";
