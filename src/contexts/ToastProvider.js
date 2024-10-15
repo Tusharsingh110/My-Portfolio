@@ -2,7 +2,6 @@ import { createContext, useReducer, useContext } from "react";
 
 const ToastStateContext = createContext({ toasts: [] })
 const ToastDispatchContext = createContext(null)
-
 function ToastReducer(state, action) {
   switch (action.type) {
     case "ADD_TOAST": {

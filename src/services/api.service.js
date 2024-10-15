@@ -46,7 +46,6 @@ export const sendFeedback = async (feedback) => {
 export const getUserData = async () => {
     try {
         const token = localStorage.getItem('token');
-
         const response = await axiosInstance.get(ROUTES.USER.GET_USER_DETAILS, { headers: { 'Authorization': `Bearer ${token}` } })
         return response.data;
     } catch (error) {

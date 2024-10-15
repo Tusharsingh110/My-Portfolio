@@ -20,7 +20,7 @@ module.exports = {
           500: '#dc3545',
           700: '#c82333', 
         },
-        warning: {
+        warn: {
           100: '#fff3cd',
           500: '#ffc107',
           700: '#e0a800', 
