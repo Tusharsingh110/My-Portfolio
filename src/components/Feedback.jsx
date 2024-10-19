@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import FeedbackCards from "./FeedbackCards";
 import { fetchFeedbacks, sendFeedback } from "../services/api.service";
 import { useToast } from "../hooks/useToast";
-
+import { useSelector } from "react-redux";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -25,15 +25,27 @@ const responsive = {
 };
 
 const Feedback = () => {
-  const [feedbackData, setFeedbackData] = useState([]);
-  const toast = useToast();
+  const { username, usermail, isVerified } = useSelector((state) => state.auth);
+  console.log(usermail, username, isVerified )
   const defaultFeedback = {
-    username: "",
-    email: "",
+    username: username ?? "",
+    email: usermail ?? "",
     type: "",
     collab: false,
     message: "",
   };
+  const [feedbackData, setFeedbackData] = useState([]);
+  const [feedback, setFeedback] = useState(defaultFeedback);
+
+  const toast = useToast();
+
+  useEffect(() => {
+    setFeedback({
+      ...feedback,
+      username: username ?? "",
+      email: usermail ?? "",
+    });
+  }, [username, usermail]);
 
   useEffect(() => {
     const getFeedbacks = async () => {
@@ -44,10 +56,15 @@ const Feedback = () => {
         console.log("ERROR:", error);
       }
     };
+    setFeedback(prevFeedback => {
+      return {
+        ...prevFeedback,
+        username:defaultFeedback.username,
+        email:defaultFeedback.email
+      }
+    });
     getFeedbacks();
   }, []);
-
-  const [feedback, setFeedback] = useState(defaultFeedback);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -83,30 +100,29 @@ const Feedback = () => {
           </div>
           {/* <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div> */}
           <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg rounded-tl-none rounded-tr-none  duration-[500ms] w-full">
-            {feedbackData?.length ?
-              (<Carousel
-              className="m-auto py-8 pb-10"
-              responsive={responsive}
-              autoPlay={true}
-              autoPlaySpeed={3000}
-              transitionDuration={500}
-              infinite={true}
-              showDots={true}
-              removeArrowOnDeviceType={[
-                "tablet",
-                "mobile",
-                "desktop",
-                "superLargeDesktop",
-              ]}
-            >
-              {feedData}
-            </Carousel>) : 
-            (
+            {feedbackData?.length ? (
+              <Carousel
+                className="m-auto py-8 pb-10"
+                responsive={responsive}
+                autoPlay={true}
+                autoPlaySpeed={3000}
+                transitionDuration={500}
+                infinite={true}
+                showDots={true}
+                removeArrowOnDeviceType={[
+                  "tablet",
+                  "mobile",
+                  "desktop",
+                  "superLargeDesktop",
+                ]}
+              >
+                {feedData}
+              </Carousel>
+            ) : (
               <div className="py-8 pb-10 flex justify-evenly dark:text-white text-[#2271ef]">
                 It's lonely here...
               </div>
-            )
-            }
+            )}
           </div>
         </div>
       </div>
@@ -125,6 +141,7 @@ const Feedback = () => {
             <div className="p-4 flex flex-col md:w-[40%] ">
               <label htmlFor="username">Name:</label>
               <input
+                disabled={isVerified}
                 onChange={handleChange}
                 className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
                 type="text"
@@ -137,6 +154,7 @@ const Feedback = () => {
                 Email:
               </label>
               <input
+                disabled={isVerified}
                 onChange={handleChange}
                 className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
                 type="email"
