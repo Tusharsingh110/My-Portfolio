@@ -579,7 +579,7 @@ export default function Resume() {
                 }
               ></SingleSelect>
               <Button
-                className="p-2 border border-[#2271ef] rounded-l-none rounded-r-lg h-12"
+                className="p-2 border border-[#2271ef] dark:bg-transparent rounded-l-none rounded-r-lg h-12"
                 onClick={downloadResume}
               >
                 <DownloadOutlined className={"text-[#2271ef]"} />

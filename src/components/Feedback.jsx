@@ -53,9 +53,9 @@ const Feedback = () => {
     event.preventDefault();
     try {
       const response = await sendFeedback(feedback);
-      toast("success","Feedback sent successfully.");
+      toast("success", "Feedback sent successfully.");
     } catch (error) {
-      toast("error",error?.message);
+      toast("error", error?.message);
     } finally {
       setFeedback(defaultFeedback);
     }
@@ -82,8 +82,9 @@ const Feedback = () => {
             Feedbacks
           </div>
           {/* <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div> */}
-          <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg duration-[500ms]">
-            <Carousel
+          <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg rounded-tl-none rounded-tr-none  duration-[500ms] w-full">
+            {feedbackData?.length ?
+              (<Carousel
               className="m-auto py-8 pb-10"
               responsive={responsive}
               autoPlay={true}
@@ -99,7 +100,13 @@ const Feedback = () => {
               ]}
             >
               {feedData}
-            </Carousel>
+            </Carousel>) : 
+            (
+              <div className="py-8 pb-10 flex justify-evenly dark:text-white text-[#2271ef]">
+                It's lonely here...
+              </div>
+            )
+            }
           </div>
         </div>
       </div>
@@ -158,17 +165,15 @@ const Feedback = () => {
                 <label
                   htmlFor="collab"
                   className="accent-[#2271ef] -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
-                >
-                </label>
-
-                  <input
-                    onChange={handleChange}
-                    type="checkbox"
-                    name="collab"
-                    id="collab"
-                    checked={feedback.collab}
-                  />
-                  If you want to collaborate just check this check box
+                ></label>
+                <input
+                  onChange={handleChange}
+                  type="checkbox"
+                  name="collab"
+                  id="collab"
+                  checked={feedback.collab}
+                />
+                If you want to collaborate just check this check box
               </div>
             </div>
 
