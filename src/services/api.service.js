@@ -100,4 +100,30 @@ export const sendOTPRequest = async () => {
     } catch (error) {
         throw (error.response.data);
     }
-}    
+}
+
+export const fetchSkills = async () => {
+    try {
+        const response = await axiosInstance.get(ROUTES.SKILL.FETCH_SKILLS);
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}
+
+export const deleteSkillById = async (id) => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axiosInstance.delete(ROUTES.SKILL.DELETE_SKILL_BY_ID, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            data: {
+                id: id
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return error.response?.data || { message: 'An error occurred' };
+    }
+};

@@ -15,5 +15,9 @@ export const ROUTES = {
         UPLOAD_RESUME: '/resume/save-resume',
         GET_RESUME_VERSIONS: '/resume/get-versions',
         GET_RESUME_WITH_VERSION: '/resume/get-resume/'
+    },
+    SKILL: {
+        FETCH_SKILLS: '/skill/fetch-skills',
+        DELETE_SKILL_BY_ID: '/skill/delete-skill-by-id'
     }
 }
