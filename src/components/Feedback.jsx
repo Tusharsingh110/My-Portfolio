@@ -26,7 +26,7 @@ const responsive = {
 
 const Feedback = () => {
   const { username, usermail, isVerified } = useSelector((state) => state.auth);
-  console.log(usermail, username, isVerified )
+  console.log(usermail, username, isVerified);
   const defaultFeedback = {
     username: username ?? "",
     email: usermail ?? "",
@@ -56,12 +56,12 @@ const Feedback = () => {
         console.log("ERROR:", error);
       }
     };
-    setFeedback(prevFeedback => {
+    setFeedback((prevFeedback) => {
       return {
         ...prevFeedback,
-        username:defaultFeedback.username,
-        email:defaultFeedback.email
-      }
+        username: defaultFeedback.username,
+        email: defaultFeedback.email,
+      };
     });
     getFeedbacks();
   }, []);
@@ -96,7 +96,7 @@ const Feedback = () => {
       <div className=" dark:bg-[#33373f] duration-[500ms] mb-10">
         <div className="max-w-[1300px] mx-auto">
           <div className="text-center text-[#2271ef] dark:bg-[#183777] dark:text-white py-8 text-[20px] md:text-4xl font-bold duration-[150ms]">
-            Feedbacks
+            Testimonials
           </div>
           {/* <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div> */}
           <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg rounded-tl-none rounded-tr-none  duration-[500ms] w-full">

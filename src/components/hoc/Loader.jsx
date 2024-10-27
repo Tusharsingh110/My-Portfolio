@@ -3,7 +3,7 @@ import './loader.css'
 
 const Loader = () => {
   return (
-    <div  className="loader w-10 h-10 "></div>
+    <div  className="loader" style={{width:"70px", margin:"10px"}}></div>
   )
 }
 

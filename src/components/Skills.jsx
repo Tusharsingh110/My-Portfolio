@@ -4,6 +4,7 @@ import { Button } from "antd";
 import { PlusOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import { useToast } from "../hooks/useToast";
 import { deleteSkillById, fetchSkills } from "../services/api.service";
+import AddSkillModal from "./common/modal/AddSkillModal";
 
 export default function Skills() {
   const toast = useToast();
@@ -31,16 +32,17 @@ export default function Skills() {
 
   const allSkills = skillsdata.map((skill) => (
     <SkillCard
-      key={skill.id}
-      id={skill.id}
+      key={skill._id}
+      id={skill._id}
       source={skill.imgsrc}
       label={skill.label}
       fetchSkillsData={fetchSkillsData}
     />
   ));
 
+  const [showAddSkillModal, setShowAddSkillModal] = useState(false);
   const handleAddSkill = () => {
-    console.log("New skill added");
+    setShowAddSkillModal(true);
   };
 
   return (
@@ -53,18 +55,26 @@ export default function Skills() {
           {allSkills}
           {isLoggedIn && isAdmin === "T" && (
             <SkillCard>
-              <Button
-                className="h-full w-full rounded-xl"
+              <button
+                className="h-full flex items-center justify-evenly -gap-2 border border-dashed dark:border-white dark:text-white border-[#2271ef] w-full text-[#2271ef] rounded-xl dark:bg-[#33373f] dark:hover:bg-[#282b31] text-sm"
                 onClick={handleAddSkill}
-                icon={<PlusOutlined />}
                 type="dashed"
               >
+                <PlusOutlined />
                 Add Skill
-              </Button>
+              </button>
             </SkillCard>
           )}
         </div>
       </div>
+      <AddSkillModal
+        showAddSkillModal={showAddSkillModal}
+        setShowAddSkillModal={setShowAddSkillModal}
+        title={"Add Skill"}
+        okText={"Add Skill"}
+        cancelText={"Cancel"}
+        fetchSkillsData={fetchSkillsData}
+      />
     </div>
   );
 }

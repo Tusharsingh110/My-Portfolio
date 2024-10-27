@@ -18,6 +18,8 @@ export const ROUTES = {
     },
     SKILL: {
         FETCH_SKILLS: '/skill/fetch-skills',
-        DELETE_SKILL_BY_ID: '/skill/delete-skill-by-id'
+        DELETE_SKILL_BY_ID: '/skill/delete-skill-by-id',
+        FETCH_SKILL_IMAGES: '/skill/get-skill-images',
+        ADD_SKILL: '/skill/add-skill'
     }
 }

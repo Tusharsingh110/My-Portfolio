@@ -127,3 +127,24 @@ export const deleteSkillById = async (id) => {
         return error.response?.data || { message: 'An error occurred' };
     }
 };
+
+export const fetchSkillImages = async (skill) => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axiosInstance.post(ROUTES.SKILL.FETCH_SKILL_IMAGES, { skill: skill }, { headers: { Authorization: `Bearer ${token}` } });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+}
+
+export const addSkill = async (skill) => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await axiosInstance.post(ROUTES.SKILL.ADD_SKILL, skill , { headers: { Authorization: `Bearer ${token}` } });
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+}
+
