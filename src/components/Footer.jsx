@@ -34,7 +34,7 @@ export default function Footer() {
                     <ul className='flex justify-evenly'>
 
                     <li><a href="https://www.facebook.com/prince221001/" target='_blank' rel='noreferrer'>  <Facebook  className='w-14 hover:-translate-y-1 duration-[400ms]'/> </a></li>
-                    <li><a href="https://www.instagram.com/_ig_tushar_/" target='_blank' rel='noreferrer'> <Instagram className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
+                    <li><a href="https://www.instagram.com/_tushar_220101/" target='_blank' rel='noreferrer'> <Instagram className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
                     <li> <a href="https://twitter.com/tusharsingh6t?t=ryjoCREL6c3w-zAcgMSGow&s=09" target='_blank' rel='noreferrer'><Twitter   className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
                     <li> <a href="https://www.linkedin.com/in/tusharsingh17/" target='_blank' rel='noreferrer'><Linkedsvg className='w-14 hover:-translate-y-1 duration-[400ms]'/></a></li>
 
