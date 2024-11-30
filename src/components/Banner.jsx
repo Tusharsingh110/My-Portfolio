@@ -1,5 +1,5 @@
 import React from 'react';
-import imge from "../assets/images/me1.jpeg";
+import imge from "../assets/images/LeetCode.jpeg";
 // import Typed from 'react-typed';
 
 export default function Banner() {
@@ -22,8 +22,8 @@ export default function Banner() {
           </div>
           
         </div>
-        <div className='h-[500px] md:w-[fit-content]'>
-          <img src={imge} alt="" className='h-[inherit]  rounded-md shadow transition duration-500 hover:shadow-2xl inline' />
+        <div className='h-[500px] flex justify-center rounded-md bg-[#2271ef] bg-opacity-15 w-[400px]'>
+          <img src={imge} alt="" className='h-[inherit]    shadow transition duration-500 hover:shadow-2xl inline' />
         </div>
       </div>
     </div>
