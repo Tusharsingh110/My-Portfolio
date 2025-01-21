@@ -26,7 +26,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "dotenv -e .env.dev react-scripts start",
+    "start:prod": "dotenv -e .env.prod react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
     "gh-pages": "^5.0.0",
     "tailwindcss": "^3.3.2"
   }
