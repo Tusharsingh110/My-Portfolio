@@ -7,6 +7,9 @@ node_modules
 
 # testing
 /coverage
+dist
+log.txt
+bug
 
 # production
 /build
