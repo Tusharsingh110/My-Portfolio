@@ -1,7 +1,7 @@
 import React, { useEffect, useState, version } from "react";
-import { ReactComponent as Leetcode } from "../assets/images/leetcode.svg";
-import { ReactComponent as Github } from "../assets/images/github.svg";
-import { ReactComponent as Linkedin } from "../assets/images/linkedin.svg";
+import Leetcode from "../assets/images/leetcode.svg?react";
+import Github from "../assets/images/github.svg?react";
+import Linkedin from "../assets/images/linkedin.svg?react";
 import { useSelector } from "react-redux";
 import { Button } from "antd";
 import UploadFileModal from "./common/modal/UploadFileModal";

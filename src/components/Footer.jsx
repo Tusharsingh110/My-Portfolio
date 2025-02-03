@@ -1,8 +1,8 @@
 import React from 'react'
-import {ReactComponent as Linkedsvg } from "../assets/images/Linkedsvg.svg"
-import {ReactComponent as Facebook } from "../assets/images/Facebook.svg"
-import {ReactComponent as Instagram } from "../assets/images/Instagram.svg"
-import {ReactComponent as Twitter } from "../assets/images/Twitter.svg"
+import Linkedsvg from "../assets/images/Linkedsvg.svg?react"
+import Facebook from "../assets/images/Facebook.svg?react"
+import Instagram from "../assets/images/Instagram.svg?react"
+import Twitter from "../assets/images/Twitter.svg?react"
 
 
 export default function Footer() {

@@ -2,7 +2,7 @@
 const data= [
     {
         id: 1,
-        image: require("../assets/images/patatap.png"),
+        image: "../assets/images/patatap.png",
         pname:'Pat-a-tap Clone',
         rlink: 'https://github.com/Tusharsingh110/PROJECT',
         llink: 'https://tusharsingh110.github.io/PROJECT/circles.html'
@@ -11,7 +11,7 @@ const data= [
     
     {
         id: 2,
-        image: require("../assets/images/todo.png"),
+        image: "../assets/images/todo.png",
         pname:'TO-DO List',
         rlink: 'https://github.com/Tusharsingh110/PROJECT',
         llink: 'https://tusharsingh110.github.io/PROJECT/todo.html'
@@ -20,7 +20,7 @@ const data= [
     
     {
         id: 3,
-        image: require("../assets/images/portfolio.png"),
+        image: "../assets/images/portfolio.png",
         pname:'Portfolio',
         rlink: 'https://github.com/Tusharsingh110/My-Portfolio',
         llink: 'https://Tusharsingh110.github.io/My-Portfolio'
@@ -29,7 +29,7 @@ const data= [
     
     {
         id: 4,
-        image: require("../assets/images/black-jack.png"),
+        image: "../assets/images/black-jack.png",
         pname:'Black JS Game',
         rlink: 'https://github.com/Tusharsingh110/Black-jack-game-JS',
         llink: 'https://tusharsingh110.github.io/Black-jack-game-JS/'
@@ -37,7 +37,7 @@ const data= [
 
     {
         id: 5,
-        image: require("../assets/images/promptexai.png"),
+        image: "../assets/images/promptexai.png",
         pname:'Prompt-EX-AI',
         rlink: 'https://github.com/Tusharsingh110/PromptEx-AI',
         llink: 'https://prompt-ex-ai.vercel.app/'
@@ -45,7 +45,7 @@ const data= [
 
     {
         id: 6,
-        image: require("../assets/images/gridpathfinder.png"),
+        image: "../assets/images/gridpathfinder.png",
         pname:'Grid-Pathfinder',
         rlink: 'https://github.com/Tusharsingh110/Grid-Pathfinder',
         llink: 'https://tusharsingh110.github.io/Grid-Pathfinder'
@@ -53,7 +53,7 @@ const data= [
 
     {
         id: 7,
-        image: require("../assets/images/TS-Healthcare.jpeg"),
+        image: "../assets/images/TS-Healthcare.jpeg",
         pname:'TS-Healthcare',
         rlink: 'https://github.com/Tusharsingh110/TS_HealthCare_Insurence_Frontend',
         llink: 'https://tshealthcare.netlify.app/'

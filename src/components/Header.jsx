@@ -89,7 +89,7 @@ export default function Header() {
           >
             {" "}
             <img
-              src={require(`../assets/images/${themeImg}`)}
+              src={`../assets/images/${themeImg}`}
               width={30}
               height={30}
               alt="theme"
@@ -124,7 +124,7 @@ export default function Header() {
             >
               {" "}
               <img
-                src={require(`../assets/images/${themeImg}`)}
+                src={`../assets/images/${themeImg}`}
                 alt="theme"
               />{" "}
             </button>
