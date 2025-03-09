@@ -13,6 +13,7 @@ const AddSkillModal = ({
   cancelText,
   fetchSkillsData,
 }) => {
+  const [imagesFetched, setImagesFetched] = useState(false);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
   const toast = useToast();
@@ -36,8 +37,9 @@ const AddSkillModal = ({
   };
 
   const handleCancel = () => {
-    setSkill("");
     setSkillImages([]);
+    setSkill("");
+    setSelectedSkillImage("");
     setLoading(false);
     fetchSkillsData();
     setShowAddSkillModal(false);
@@ -56,6 +58,7 @@ const AddSkillModal = ({
     } catch (error) {
       toast("error", error.message);
     } finally {
+      setImagesFetched(true);
       handleCancel();
     }
   };
@@ -82,8 +85,9 @@ const AddSkillModal = ({
             <input
               type="skill"
               value={skill}
-              className="p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-md"
+              className="p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-md !cursor-pointer"
               name="skill"
+              onKeyDown={(e) => { if (e.key === "Enter") fetchImages(); }}
               onChange={(e) => setSkill(e.target.value)}
             />
           </div>
@@ -117,7 +121,7 @@ const AddSkillModal = ({
             </div>
           </div>
         ) : (
-          skill && 
+          skill && skillImages.length == 0 && imagesFetched &&
           <>No Images found.</>
         )}
 
