@@ -37,6 +37,10 @@
   }
 } */
 
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 .svgg {
   z-index: -1;
 }

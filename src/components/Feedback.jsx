@@ -143,7 +143,7 @@ const Feedback = () => {
               <input
                 disabled={isVerified}
                 onChange={handleChange}
-                className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
+                className="dark:bg-[#464b55]"
                 type="text"
                 name="username"
                 value={feedback.username}
@@ -156,7 +156,7 @@ const Feedback = () => {
               <input
                 disabled={isVerified}
                 onChange={handleChange}
-                className="dark:bg-[#464b55] p-1 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
+                className="dark:bg-[#464b55]"
                 type="email"
                 name="email"
                 value={feedback.email}
@@ -165,7 +165,7 @@ const Feedback = () => {
 
               <select
                 onChange={handleChange}
-                className="dark:bg-[#464b55] p-1 mt-8 -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
+                className="dark:bg-[#464b55] mt-8"
                 name="type"
                 id="type"
                 value={feedback.type}
@@ -182,7 +182,7 @@ const Feedback = () => {
               <div className="mt-6 items-center flex gap-2">
                 <label
                   htmlFor="collab"
-                  className="accent-[#2271ef] -outline-offset-0 outline-none focus:outline-[#2271ef] rounded-sm"
+                  className="accent-[#2271ef]"
                 ></label>
                 <input
                   onChange={handleChange}
@@ -198,7 +198,7 @@ const Feedback = () => {
             <div className="flex md:w-[40%] justify-center">
               <textarea
                 onChange={handleChange}
-                className="w-full m-4 p-1 outline-none -outline-offset-0 focus:outline-[#2271ef] rounded-sm dark:bg-[#464b55]"
+                className="w-full m-4 dark:bg-[#464b55]"
                 name="message"
                 id=""
                 cols="30"

@@ -44,12 +44,14 @@ export default function Header() {
     try {
       const response = await getUserData();
       const userData = response.data;
+      console.log(userData)
       dispatch(
         logIn({
-          username: userData.username,
-          mail: userData.mail,
-          isAdmin: userData.isAdmin,
-          isVerified: userData.isVerified, 
+          userId: userData?.id,
+          username: userData?.username,
+          mail: userData?.mail,
+          isAdmin: userData?.isAdmin,
+          isVerified: userData?.isVerified, 
         })
       );
     } catch (error) {

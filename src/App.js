@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Banner from "./components/Banner";
@@ -11,32 +11,39 @@ import { ToastProvider } from './contexts/ToastProvider';
 import TestComponent from './components/common/misc/TestComponent';
 import "./styles.css"
 import ToastContainer from './components/common/toast/ToastContainer';
+import ChatBot from './components/common/misc/ChatBot';
+import { SocketProvider } from './contexts/SocketProvider';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path='/My-Portfolio' element={
-          <ToastProvider>
-            <Header />
-            <Banner />
-            <Skills />
-            <Projects />
-            <Resume />
-            <Feedback />
-            <Footer />
-            <ToastContainer />
-          </ToastProvider>
-        } />
-        <Route path="/test" element={
-          <ToastProvider>
-            <TestComponent />
-            <ToastContainer />
-          </ToastProvider>
-        } />
-      </Routes>
+      <ToastProvider>
+        <SocketProvider>
+          <Header />
+          <Routes>
+            <Route path='/My-Portfolio' element={
+              <>
+                <Banner />
+                <Skills />
+                <Projects />
+                <Resume />
+                <Feedback />
+                <Footer />
+                <ToastContainer />
+              </>
+            } />
+            <Route path="/test" element={
+              <>
+                <TestComponent />
+                <ToastContainer />
+              </>
+            } />
+            <Route path="*" element={<h1>404: Page Not Found</h1>} />
+          </Routes>
+          <ChatBot /> {/* Always rendered, independent of Routes */}
+        </SocketProvider>
+      </ToastProvider>
     </Router>
-
   );
 }
 
