@@ -27,8 +27,12 @@ const ChatBot = () => {
 
   // Toggle chatbot visibility
   const toggleChatbot = () => {
-    if(!userData?.isLoggedIn) {
+    if (!userData?.isLoggedIn) {
       toast("warn", "Please login to use the chat feature");
+      return;
+    }
+    if (!userData?.isVerified) {
+      toast("warn", "Please verify your account to use the chat feature"); 
       return;
     }
     setShowChat(!showChat);
@@ -53,7 +57,7 @@ const ChatBot = () => {
       {/* Chatbot toggle button */}
       <button onClick={toggleChatbot} className="chat-bot">
         <img 
-          className={`${userData?.isLoggedIn ? "opacity-100" : "opacity-50"} ${!userData?.isLoggedIn ? "filter grayscale" : ""}`} 
+          className={`${(userData?.isLoggedIn && userData?.isVerified) ? "opacity-100" : "opacity-50"} ${!userData?.isLoggedIn ? "filter grayscale" : ""}`} 
           src={chatbotImg} 
           alt="Chatbot" 
         />
