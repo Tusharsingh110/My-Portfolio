@@ -72,6 +72,15 @@ export const getResumeVersions = async () => {
     }
 }
 
+export const getResumeJSON = async () => {
+    try {
+        const response = await axiosInstance.get(ROUTES.RESUME.GET_RESUME_JSON);
+        return response.data;
+    } catch (error) {
+        throw (error.response.data);
+    }
+}
+
 export const getResumeWithVersion = async (version) => {
     try {
         const response = await axiosInstance.get(ROUTES.RESUME.GET_RESUME_WITH_VERSION + version);

@@ -14,6 +14,7 @@ export const ROUTES = {
     RESUME: {
         UPLOAD_RESUME: '/resume/save-resume',
         GET_RESUME_VERSIONS: '/resume/get-versions',
+        GET_RESUME_JSON: '/resume/get-resume-json',
         GET_RESUME_WITH_VERSION: '/resume/get-resume/'
     },
     SKILL: {

@@ -5,6 +5,12 @@ export function useToast() {
     const dispatch = useToastDispatchContext();
 
     // Function to add a toast
+    /**
+     * Function to add a toast
+     * @param {string} type - Type of the toast (e.g., 'success', 'error')
+     * @param {string} message - The message to display
+     * @param {number} [duration=5000] - Duration in milliseconds before the toast disappears
+     */
     function toast(type, message, duration = 5000) {
         const id = Date.now(); // Unique ID for the toast
         dispatch({
