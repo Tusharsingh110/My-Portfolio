@@ -115,7 +115,7 @@ export default function Resume() {
                 <div className="md:text-2xl text-xl md:font-thin pb-2">
                   SOCIAL & CODING PROFILES
                 </div>
-                <div className="text-base md:text-base flex flex-col md:flex-row md:justify-start">
+                <div className="text-base md:text-base flex flex-col md:flex-row md:flex-wrap md:justify-start">
                   {resumeData.socialProfiles.map((profile, index) => {
                     return (
                       <a
