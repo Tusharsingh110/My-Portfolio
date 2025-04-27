@@ -5,6 +5,7 @@ import FeedbackCards from "./FeedbackCards";
 import { fetchFeedbacks, sendFeedback } from "../services/api.service";
 import { useToast } from "../hooks/useToast";
 import { useSelector } from "react-redux";
+import { ConfigProvider, Select } from "antd";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -30,7 +31,7 @@ const Feedback = () => {
   const defaultFeedback = {
     username: username ?? "",
     email: usermail ?? "",
-    type: "",
+    type: null,
     collab: false,
     message: "",
   };
@@ -92,14 +93,13 @@ const Feedback = () => {
   });
 
   return (
-    <div className="w-full p-10  dark:bg-[#33373f] duration-[500ms] dark:text-white">
-      <div className=" dark:bg-[#33373f] duration-[500ms] mb-10">
+    <div className="w-full p-10 dark:bg-[#33373f] duration-[500ms] dark:text-white">
+      <div className="dark:bg-[#33373f] duration-[500ms] mb-10">
         <div className="max-w-[1300px] mx-auto">
           <div className="text-center text-[#2271ef] dark:bg-[#183777] dark:text-white py-8 text-[20px] md:text-4xl font-bold duration-[150ms]">
             Testimonials
           </div>
-          {/* <div className='text-center text-[#2271ef] py-8 text-[20px] md:text-4xl font-bold dark:text-white'>Projects</div> */}
-          <div className="bg-[#EDF3FD] dark:bg-[#262626]  rounded-lg rounded-tl-none rounded-tr-none  duration-[500ms] w-full">
+          <div className="bg-[#EDF3FD] dark:bg-[#262626] rounded-lg rounded-tl-none rounded-tr-none duration-[500ms] w-full">
             {feedbackData?.length ? (
               <Carousel
                 className="m-auto py-8 pb-10"
@@ -131,14 +131,14 @@ const Feedback = () => {
         Feedback/Query Form
       </div>
 
-      <div className="mx-auto md:p-10 p-4 max-w-[13000px] justify-center items-center bg-[#EDF3FD] dark:bg-[#262626] ">
+      <div className="mx-auto md:p-10 p-4 max-w-[1300px] justify-center items-center bg-[#EDF3FD] dark:bg-[#262626]">
         <form
           method="POST"
           className="text-zinc-800 dark:text-white"
           onSubmit={handleSubmit}
         >
           <div className="md:flex md:justify-evenly items-center">
-            <div className="p-4 flex flex-col md:w-[40%] ">
+            <div className="p-4 flex flex-col md:w-[40%]">
               <label htmlFor="username">Name:</label>
               <input
                 disabled={isVerified}
@@ -163,27 +163,40 @@ const Feedback = () => {
                 required
               />
 
-              <select
-                onChange={handleChange}
-                className="dark:bg-[#464b55] mt-8"
-                name="type"
-                id="type"
-                value={feedback.type}
-                required
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: "#2271ef",
+                    borderRadius: "2px",
+                    borderColor: "#2271ef5b",
+                  },
+                }}
               >
-                <option disabled value="">
-                  ---Select an option---
-                </option>
-                <option value="feedback">Feedback/Suggestion</option>
-                <option value="ask">Ask</option>
-                <option value="other">Other</option>
-              </select>
+                <Select
+                  onChange={(value) => {
+                    setFeedback((prevFeedback) => ({
+                      ...prevFeedback,
+                      type: value,
+                    }));
+                  }}
+                  className="dark:bg-[#464b55] mt-8 border-blue-200"
+                  name="type"
+                  id="type"
+                  allowClear={true}
+                  value={feedback.type}
+                  showSearch
+                  placeholder={"---Select an option---"}
+                  required
+                >
+                  <Select.Option value="feedback">
+                    Feedback/Suggestion
+                  </Select.Option>
+                  <Select.Option value="ask">Ask</Select.Option>
+                  <Select.Option value="other">Other</Select.Option>
+                </Select>
+              </ConfigProvider>
 
               <div className="mt-6 items-center flex gap-2">
-                <label
-                  htmlFor="collab"
-                  className="accent-[#2271ef]"
-                ></label>
                 <input
                   onChange={handleChange}
                   type="checkbox"
@@ -191,7 +204,9 @@ const Feedback = () => {
                   id="collab"
                   checked={feedback.collab}
                 />
-                If you want to collaborate just check this check box
+                <label htmlFor="collab" className="accent-[#2271ef]">
+                  If you want to collaborate just check this checkbox
+                </label>
               </div>
             </div>
 
@@ -200,16 +215,15 @@ const Feedback = () => {
                 onChange={handleChange}
                 className="w-full m-4 dark:bg-[#464b55]"
                 name="message"
-                id=""
                 cols="30"
                 rows="10"
-                placeholder="Your message goes here.."
+                placeholder="Your message goes here..."
                 value={feedback.message}
                 required
               ></textarea>
             </div>
           </div>
-          <div className="flex mt-2  justify-center">
+          <div className="flex mt-2 justify-center">
             <input
               className="p-2 w-24 rounded-md drop-shadow-md bg-[#2271ef] dark:bg-[#464b55] border text-white hover:bg-white hover:text-[#2271ef] hover:border border-[#2271ef] duration-[100ms]"
               type="submit"

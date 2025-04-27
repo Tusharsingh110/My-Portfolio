@@ -188,3 +188,11 @@ input, textarea, select {
   .grayscale {
     filter: grayscale(100%);
   }
+
+  .ant-select-selector:focus {
+    outline: 2px solid #2271ef !important;
+  }
+
+  .ant-select-selector {
+    border: 1px solid #2271ef5b !important;
+}

@@ -55,8 +55,8 @@ export default function Header() {
         })
       );
     } catch (error) {
+      localStorage.removeItem('token');
       dispatch(logOut());
-      // localStorage.removeItem('token');
       // toast("error", error.message);
     }
   };
@@ -119,7 +119,7 @@ export default function Header() {
             </a>
           </div>
 
-          <div className="">
+          {/* <div className="">
             <button
               className="w-10 hover:rotate-360 transition-transform duration-500"
               onClick={toggleTheme}
@@ -130,7 +130,7 @@ export default function Header() {
                 alt="theme"
               />{" "}
             </button>
-          </div>
+          </div> */}
           {isLoggedIn ? (
             <div className="flex gap-2">
               {/* <p>Hi {usermail?.split("@")[0] ?? "user"}, Not you?</p> */}

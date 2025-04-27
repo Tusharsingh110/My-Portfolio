@@ -7,6 +7,7 @@ const BASE_URL = process.env.REACT_APP_API_URL;
 // List of endpoints where retry is allowed.  Use exact paths.
 const RETRIABLE_ENDPOINTS = [
   ROUTES.FEEDBACK.FETCH_FEEDBACKS,
+  ROUTES.USER.FETCH_USER,
 ];
 
 // Determine maximum retries and delay.  These should come from
@@ -76,7 +77,7 @@ const createAxiosInstance = () => {
       }
 
       // 4.  Check the response status code.  Only retry on specific server errors.
-      if (response.status >= 500 || response.status === 429) { // Retry on 5xx errors and 429 (Too Many Requests)
+      if (response.status >= 500 || response.status === 429 || response.status === 401) { // Retry on 5xx errors and 429 (Too Many Requests)
         // Increment the retry count
         config.headers['x-retry-count'] = retryCount + 1;
 
